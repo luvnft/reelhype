@@ -26,7 +26,16 @@ export async function RandomItems() {
     return randomItem
 }
 
-export function Background({ randomItem }: any) {
+interface Movie {
+    id: string;
+    media_type: string;
+    poster_path: string;
+    title: string;
+    vote_average: number;
+    name: string;
+    backdrop_path: string;
+}
+export function Background({ randomItem }: { randomItem: Movie }) {
     return (
         <div className="w-full min-h-screen bg-cover">
             {randomItem && (

@@ -19,7 +19,24 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
-async function TrailerImages({ id }: { id: string }) {
+interface Trailer {
+  id: string;
+  snippet: {
+    title: string;
+    thumbnails: {
+      high: {
+        url: string;
+      };
+    };
+  }
+}
+
+interface Videoplayer {
+  sources: string[];
+  info: string[];
+}
+
+async function TrailerImages({ id }: { id: string[] }) {
   const apiKey = "AIzaSyDUDmLll7eVZYFxi0u8VbrdkRSYNWylcZA";
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${apiKey}&part=snippet`,
@@ -28,7 +45,7 @@ async function TrailerImages({ id }: { id: string }) {
   return data;
 }
 
-export function VideoPlayer({ sources, info }: any) {
+export function VideoPlayer({ sources, info }: Videoplayer) {
   const { data, isLoading, error } = useQuery({
     queryKey: ["trailer-images", info],
     queryFn: () => TrailerImages({ id: info }),
@@ -80,14 +97,14 @@ export function VideoPlayer({ sources, info }: any) {
           </div>
         </div>
 
-        <ScrollArea className="lg:h-[670px] h-[500px] w-full lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
+        <ScrollArea className="lg:h-[670px] h-[500px] lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
           {isLoading ? (
             <p>Loading...</p>
           ) : error ? (
             <p>Error: {error.message}</p>
           ) : (
             <>
-              {data?.items?.map((item, index) => (
+              {data?.items?.map((item: Trailer, index: number) => (
                 <div key={item.id || index} className="flex flex-col gap-4 ">
                   <div className={` flex flex-row items-start gap-4 py-4 px-2 rounded-lg ${sources[src] === `youtube/${item.id}` ? 'bg-black/50' : ''}`}>
                     {item.snippet?.thumbnails?.high?.url && (

@@ -9,10 +9,10 @@ export default async function HomePage() {
   const datas = await RandomItems()
 
   // Convert the number to a string
-  let vote_average_str = datas?.vote_average && datas?.vote_average?.toString() || null;
+  const vote_average_str = datas?.vote_average && datas?.vote_average?.toString() || null;
 
   // Extract the first two characters from the string representation
-  let vote = vote_average_str && vote_average_str?.slice(0, 3) || null;
+  const vote = vote_average_str && vote_average_str?.slice(0, 3) || null;
 
   return (
     <main className="flex min-h-screen relative">

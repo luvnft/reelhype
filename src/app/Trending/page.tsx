@@ -2,6 +2,15 @@ import { Icons } from "@/components/ui/icons"
 import Link from "next/link"
 import { CldImage } from 'next-cloudinary';
 
+interface Movie {
+    id: string;
+    media_type: string;
+    poster_path: string;
+    title: string;
+    vote_average: number;
+    name: string;
+}
+
 export default async function Trending() {
     const data = await fetchTrendingImages()
 
@@ -9,7 +18,7 @@ export default async function Trending() {
         <div className="w-full max-w-[1200px] flex flex-col gap-10 px-3 mx-auto py-10">
             <h1 className="text-3xl font-medium font-mono px-3">Trending</h1>
             <div className="grid lg:grid-cols-5 grid-cols-2 lg:gap-5 gap-3">
-                {data.results.map((trending) => (
+                {data.results.map((trending: Movie) => (
                     <Link href={`/info/${trending.media_type}/${trending.id}`} key={trending.id} className="px-[13px] py-[9px] flex flex-col items-start gap-1 cursor-pointer">
                         <CldImage deliveryType='fetch' width={198.10} height={296.51} src={`https://image.tmdb.org/t/p/original${trending.poster_path}`}
                             alt={trending.title || trending.name}

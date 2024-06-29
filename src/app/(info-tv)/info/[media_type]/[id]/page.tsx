@@ -6,7 +6,7 @@ import { Icons } from "@/components/ui/icons";
 import { Disqus } from "@/app/(info-tv)/_components/disqus";
 import { CldImage } from 'next-cloudinary';
 
-export default async function Page({ params: { media_type, id } }: any) {
+export default async function Page({ params: { media_type, id } }: { params: { media_type: string, id: string } }) {
   const res = await fetch(
     `https://api.themoviedb.org/3/${media_type}/${id}?language=en-US`,
     {
@@ -19,6 +19,19 @@ export default async function Page({ params: { media_type, id } }: any) {
   );
   const data = await res.json();
 
+  interface Movie {
+    id: string;
+    media_type: string;
+    poster_path: string;
+    title: string;
+    vote_average: number;
+    name: string;
+    original_name: string;
+    overview: string;
+    tagline: string;
+    backdrop_path: string;
+  }
+
   const {
     name,
     original_name,
@@ -27,7 +40,7 @@ export default async function Page({ params: { media_type, id } }: any) {
     title,
     tagline,
     backdrop_path,
-  } = data;
+  } = data as Movie;
 
   // Convert the number to a string
   let vote_average_str = vote_average?.toString();
@@ -80,7 +93,7 @@ export default async function Page({ params: { media_type, id } }: any) {
               <div className="flex flex-col gap-8">
                 <h1 className="text-2xl font-medium ">Comments</h1>
                 <div>
-                  <Disqus id={id} title={name || original_name || title} />
+                  <Disqus id={id} title={name || original_name || title} media_type={media_type} />
                 </div>
               </div>
 
