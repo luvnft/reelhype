@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Background, RandomItems } from "./_components/background";
-import { MainNav } from "@/components/main-nav";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 
@@ -25,7 +24,7 @@ export default async function HomePage() {
 
       <header className="absolute top-0 bottom-0 right-0 left-0">
         <div className="flex flex-col items-center justify-center max-w-[1200px] p-5 mx-auto w-full h-full">
-          
+
 
           <section className="flex flex-col items-center justify-center w-full h-full gap-[32px]">
             <div className="flex flex-col items-center gap-4">
