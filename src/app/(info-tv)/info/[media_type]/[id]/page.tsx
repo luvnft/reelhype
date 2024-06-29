@@ -30,7 +30,7 @@ export default async function Page({ params: { media_type, id } }: { params: { m
       },
     },
   );
-  const data = await res.json();
+  const data = await res.json() as Movie;
 
 
 
@@ -42,13 +42,13 @@ export default async function Page({ params: { media_type, id } }: { params: { m
     title,
     tagline,
     backdrop_path,
-  } = data as Movie;
+  } = data;
 
   // Convert the number to a string
-  let vote_average_str = vote_average?.toString();
+  const vote_average_str = vote_average?.toString();
 
   // Extract the first two characters from the string representation
-  let vote = vote_average_str.slice(0, 3);
+  const vote = vote_average_str.slice(0, 3);
 
   return (
     <div className="relative min-h-screen">
@@ -140,7 +140,7 @@ const TrailerInfo: React.FC<TrailerInfoProps> = async ({ media_type, id }) => {
       },
     },
   );
-  const data: ApiResponse = await response.json();
+  const data = await response.json() as ApiResponse;
 
   // Filter the results to include only those with type "Trailer"
   const trailers = data.results.filter((video) => video.type === "Trailer");

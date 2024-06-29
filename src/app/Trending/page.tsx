@@ -3,6 +3,7 @@ import Link from "next/link"
 import { CldImage } from 'next-cloudinary';
 
 interface Movie {
+
     id: string;
     media_type: string;
     poster_path: string;
@@ -11,14 +12,18 @@ interface Movie {
     name: string;
 }
 
+interface MovieData {
+    results: Movie[];
+}
+
 export default async function Trending() {
-    const data = await fetchTrendingImages()
+    const data = await fetchTrendingImages();
 
     return (
         <div className="w-full max-w-[1200px] flex flex-col gap-10 px-3 mx-auto py-10">
             <h1 className="text-3xl font-medium font-mono px-3">Trending</h1>
             <div className="grid lg:grid-cols-5 grid-cols-2 lg:gap-5 gap-3">
-                {data.results.map((trending: Movie) => (
+                {data.results.map((trending) => (
                     <Link href={`/info/${trending.media_type}/${trending.id}`} key={trending.id} className="px-[13px] py-[9px] flex flex-col items-start gap-1 cursor-pointer">
                         <CldImage deliveryType='fetch' width={198.10} height={296.51} src={`https://image.tmdb.org/t/p/original${trending.poster_path}`}
                             alt={trending.title || trending.name}
@@ -48,6 +53,6 @@ async function fetchTrendingImages() {
         cache: 'no-store'
     })
 
-    const data = await res.json()
+    const data = await res.json() as MovieData;
     return data
 }

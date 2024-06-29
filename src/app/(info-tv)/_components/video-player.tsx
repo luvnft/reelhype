@@ -20,6 +20,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
+
 interface Trailer {
   id: string;
   snippet: {
@@ -37,20 +38,30 @@ interface Videoplayer {
   info: string[];
 }
 
-async function TrailerImages({ id }: { id: string[] }) {
+interface TrailerData {
+  items: Trailer[];
+}
+
+interface TrailerImagesParams {
+  id: string;
+}
+
+
+async function TrailerImages({ id }: TrailerImagesParams): Promise<TrailerData> {
   const apiKey = "AIzaSyDUDmLll7eVZYFxi0u8VbrdkRSYNWylcZA";
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${apiKey}&part=snippet`,
   );
-  const data = await res.json();
+  const data = await res.json() as TrailerData;
   return data;
 }
 
 export function VideoPlayer({ sources, info }: Videoplayer) {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error } = useQuery<TrailerData>({
     queryKey: ["trailer-images", info],
-    queryFn: () => TrailerImages({ id: info }),
+    queryFn: () => TrailerImages({ id: info[0] ?? '' })
   });
+
   const [src, setSrc] = useState(0);
 
   function prevVideo() {
@@ -87,9 +98,7 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
         </MediaPlayer>
       </div>
 
-
       <div>
-
         <div className="flex flex-row justify-between mb-3">
           <h1 className="font-medium text-xl">Related Trailers</h1>
           <div className="flex flex-row gap-4">
@@ -105,7 +114,7 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
             <p>Error: {error.message}</p>
           ) : (
             <>
-              {data?.items?.map((item: Trailer, index: number) => (
+              {data?.items.map((item: Trailer, index: number) => (
                 <div key={item.id || index} className="flex flex-col gap-4 ">
                   <div className={` flex flex-row items-start gap-4 py-4 px-2 rounded-lg ${sources[src] === `youtube/${item.id}` ? 'bg-black/50' : ''}`}>
                     {item.snippet?.thumbnails?.high?.url && (
@@ -115,7 +124,6 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
                         width={168}
                         height={94}
                         className="aspect-video rounded-lg object-cover"
-
                       />
                     )}
                     <div className="grid gap-1 text-sm">
@@ -129,7 +137,6 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
           )}
         </ScrollArea>
       </div>
-
     </div>
   );
 }
