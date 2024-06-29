@@ -3,9 +3,8 @@
 import { VideoPlayer } from "@/app/(info-tv)/_components/video-player";
 import { Separator } from "@/components/ui/separator";
 import { Icons } from "@/components/ui/icons";
-import { Button } from "@/components/ui/button";
 import { Disqus } from "@/app/(info-tv)/_components/disqus";
-import Link from "next/link";
+import { CldImage } from 'next-cloudinary';
 
 export default async function Page({ params: { media_type, id } }: any) {
   const res = await fetch(
@@ -38,10 +37,12 @@ export default async function Page({ params: { media_type, id } }: any) {
 
   return (
     <div className="relative min-h-screen">
-      <img
+      <CldImage
         src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
         alt={original_name}
-        className="h-[550px] w-screen bg-cover bg-top object-cover"
+        fill
+        deliveryType='fetch'
+        className="h-[550px] bg-cover bg-top object-cover"
       />
       <div className="absolute bottom-0 left-0 right-0 top-0 h-[550px] w-full bg-gradient-to-b from-transparent to-black " />
       <div className="absolute bottom-0 left-0 right-0 top-0">
@@ -53,7 +54,7 @@ export default async function Page({ params: { media_type, id } }: any) {
 
             <div className="flex w-full max-w-[1200px] flex-col gap-3 px-3  lg:gap-4 lg:px-0">
 
-                {/* Name */}
+              {/* Name */}
               <h1 className="font-mono text-2xl lg:text-4xl">
                 {name || original_name || title}
               </h1>
@@ -65,14 +66,14 @@ export default async function Page({ params: { media_type, id } }: any) {
                   <Icons.star />
                   <p className="text-sm lg:text-lg">{vote || null}</p>
                 </div>
-                
+
               </div>
 
               <Separator />
 
               {/* Overview */}
               <p className="text-sm lg:text-lg">{overview}</p>
-              
+
               <Separator />
 
               {/* Comment section */}
