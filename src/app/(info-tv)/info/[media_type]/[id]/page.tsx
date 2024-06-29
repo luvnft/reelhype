@@ -6,6 +6,19 @@ import { Icons } from "@/components/ui/icons";
 import { Disqus } from "@/app/(info-tv)/_components/disqus";
 import { CldImage } from 'next-cloudinary';
 
+
+interface Movie {
+  id: string;
+  media_type: string;
+  poster_path: string;
+  title: string;
+  vote_average: number;
+  name: string;
+  original_name: string;
+  overview: string;
+  tagline: string;
+  backdrop_path: string;
+}
 export default async function Page({ params: { media_type, id } }: { params: { media_type: string, id: string } }) {
   const res = await fetch(
     `https://api.themoviedb.org/3/${media_type}/${id}?language=en-US`,
@@ -19,18 +32,7 @@ export default async function Page({ params: { media_type, id } }: { params: { m
   );
   const data = await res.json();
 
-  interface Movie {
-    id: string;
-    media_type: string;
-    poster_path: string;
-    title: string;
-    vote_average: number;
-    name: string;
-    original_name: string;
-    overview: string;
-    tagline: string;
-    backdrop_path: string;
-  }
+
 
   const {
     name,

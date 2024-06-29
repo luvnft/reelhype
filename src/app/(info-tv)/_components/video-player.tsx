@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { CldImage } from "next-cloudinary";
 
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
@@ -108,10 +109,13 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
                 <div key={item.id || index} className="flex flex-col gap-4 ">
                   <div className={` flex flex-row items-start gap-4 py-4 px-2 rounded-lg ${sources[src] === `youtube/${item.id}` ? 'bg-black/50' : ''}`}>
                     {item.snippet?.thumbnails?.high?.url && (
-                      <img
+                      <CldImage
                         src={item.snippet.thumbnails.high.url}
                         alt={item.snippet.title}
-                        className="aspect-video h-[94px] w-[168px] rounded-lg object-cover"
+                        width={168}
+                        height={94}
+                        className="aspect-video rounded-lg object-cover"
+
                       />
                     )}
                     <div className="grid gap-1 text-sm">

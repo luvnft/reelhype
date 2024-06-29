@@ -5,8 +5,21 @@ import { Background, RandomItems } from "./_components/background";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 
+interface Movie {
+  id: string;
+  media_type: string;
+  poster_path: string;
+  title: string;
+  vote_average: number;
+  name: string;
+  original_name: string;
+  overview: string;
+  tagline: string;
+  backdrop_path: string;
+}
+
 export default async function HomePage() {
-  const datas = await RandomItems()
+  const datas: Movie = await RandomItems()
 
   // Convert the number to a string
   const vote_average_str = datas?.vote_average && datas?.vote_average?.toString() || null;
