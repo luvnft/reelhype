@@ -1,6 +1,6 @@
 // ./src/app/_components/background.tsx
 
-import { CldImage } from 'next-cloudinary';
+import { ImageComponent } from '@/components/image-component';
 
 
 interface Movie {
@@ -11,6 +11,10 @@ interface Movie {
     vote_average: number;
     name: string;
     backdrop_path: string;
+}
+
+interface MovieResults {
+    results: Movie[];
 }
 
 
@@ -24,20 +28,16 @@ async function fetchTrendingImages() {
         cache: 'no-store'
     })
 
-    const data = await res.json() as Movie[];
+    const data = await res.json() as MovieResults;
     return data
 }
 
 export async function RandomItems() {
-    const res = await fetchTrendingImages()
+    const data = await fetchTrendingImages()
 
-    // Use Math.random to pick a random index between 0 and 12
-    if (!Array.isArray(res)) {
-        throw new Error("Expected an array of movies");
-    }
-
-    const randomIndex = Math.floor(Math.random() * res.length);
-    const randomItem = res[randomIndex];
+    // Use Math.random to pick a random index between 0 and 9
+    const randomIndex = Math.floor(Math.random() * 10)
+    const randomItem = data.results[randomIndex]
 
     return randomItem
 }
@@ -46,11 +46,10 @@ export function Background({ randomItem }: { randomItem: Movie }) {
     return (
         <div className="w-full min-h-screen bg-cover">
             {randomItem && (
-                <CldImage
+                <ImageComponent
                     src={`https://image.tmdb.org/t/p/original${randomItem.backdrop_path}`}
                     alt={randomItem.title || randomItem.name}
-                    fill
-                    deliveryType='fetch'
+                    fill={true}
                     className="object-cover"
                 />
             )}

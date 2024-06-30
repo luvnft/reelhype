@@ -4,7 +4,7 @@ import { VideoPlayer } from "@/app/(info-tv)/_components/video-player";
 import { Separator } from "@/components/ui/separator";
 import { Icons } from "@/components/ui/icons";
 import { Disqus } from "@/app/(info-tv)/_components/disqus";
-import { CldImage } from 'next-cloudinary';
+import { ImageComponent } from "@/components/image-component";
 
 
 interface Movie {
@@ -52,22 +52,22 @@ export default async function Page({ params: { media_type, id } }: { params: { m
 
   return (
     <div className="relative min-h-screen">
-      <CldImage
+      <ImageComponent
         src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
         alt={original_name}
-        fill
-        deliveryType='fetch'
-        className="h-[550px] bg-cover bg-top object-cover"
+        fill={true}
+        
+        className="h-[550px] bg-cover bg-top object-cover lg:max-h-[800px] lg:h-full"
       />
-      <div className="absolute bottom-0 left-0 right-0 top-0 h-[550px] w-full bg-gradient-to-b from-transparent to-black " />
+      <div className="absolute bottom-0 left-0 right-0 top-0 h-[`calc(100vh - 550px)`] w-full bg-gradient-to-b from-transparent to-black " />
       <div className="absolute bottom-0 left-0 right-0 top-0">
-        <div className="mx-auto mt-16 flex w-full max-w-[1770px] items-center rounded-lg px-3 py-0 lg:px-10 lg:py-3">
-          <div className=" flex w-full flex-col gap-10  lg:gap-20">
+        <div className="mx-auto lg:mt-0 mt-16 flex w-full max-w-[1770px] items-center rounded-lg px-3 py-0 lg:px-10 lg:py-3">
+          <div className=" flex w-full flex-col gap-10  lg:gap-10">
             <div className=" ">
               <TrailerInfo media_type={media_type} id={id} />
             </div>
 
-            <div className="flex w-full max-w-[1200px] flex-col gap-3 px-3  lg:gap-4 lg:px-0">
+            <div className="flex w-full max-w-[1200px]  flex-col gap-3 px-3  lg:gap-4 lg:px-0">
 
               {/* Name */}
               <h1 className="font-mono text-2xl lg:text-4xl">

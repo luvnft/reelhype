@@ -1,6 +1,6 @@
 import { Icons } from "@/components/ui/icons"
 import Link from "next/link"
-import { CldImage } from 'next-cloudinary';
+import { ImageComponent } from "@/components/image-component";
 
 interface Movie {
 
@@ -25,7 +25,7 @@ export default async function Trending() {
             <div className="grid lg:grid-cols-5 grid-cols-2 lg:gap-5 gap-3">
                 {data.results.map((trending) => (
                     <Link href={`/info/${trending.media_type}/${trending.id}`} key={trending.id} className="px-[13px] py-[9px] flex flex-col items-start gap-1 cursor-pointer">
-                        <CldImage deliveryType='fetch' width={198.10} height={296.51} src={`https://image.tmdb.org/t/p/original${trending.poster_path}`}
+                        <ImageComponent  width={198.10} height={296.51} src={`https://image.tmdb.org/t/p/original${trending.poster_path}`}
                             alt={trending.title || trending.name}
                             className="object-cover w-full max-w-[198.10px] lg:h-[296.51px] h-auto rounded-[25.90px] transition-all border border-gray-500 hover:shadow-white/30 hover:shadow-sm hover:outline hover:outline-2 hover:outline-stone-400" />
                         <div className="py-3 pr-3">

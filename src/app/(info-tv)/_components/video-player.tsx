@@ -107,7 +107,7 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
           </div>
         </div>
 
-        <ScrollArea className="lg:h-[670px] h-[500px] lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
+        <ScrollArea className="lg:h-[70px] h-[500px] lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
           {isLoading ? (
             <p>Loading...</p>
           ) : error ? (
@@ -122,6 +122,7 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
                         src={item.snippet.thumbnails.high.url}
                         alt={item.snippet.title}
                         width={168}
+                        deliveryType="fetch"
                         height={94}
                         className="aspect-video rounded-lg object-cover"
                       />
