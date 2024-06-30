@@ -6,7 +6,8 @@ import { QueryProvider } from "@/config/query-provider";
 import { MainNav } from "@/components/main-nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CSPostHogProvider } from "@/config/posthog-provider";
-import PostHogPageView from "./(posthog)/PostHogPageView";
+
+export const runtime = "edge";
 
 export const metadata = {
   title: "ReelHype",
@@ -34,7 +35,7 @@ export default function RootLayout({
               <div className="w-full bg-black/60 px-3 py-3">
                 <MainNav />
               </div>
-              <PostHogPageView />
+ 
               {children}
             </body>
           </QueryProvider>

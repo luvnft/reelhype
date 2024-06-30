@@ -9,7 +9,7 @@
 
 # Part 2
 
-- [ ] add authentication(clerk)
+- [x] add authentication(clerk)
 - [ ] add error managment(sentry)
 - [ ] add intercepting routes for sign up/ sign in
-- [ ] add analytics(posthog)
+- [x] add analytics(posthog)

@@ -3,19 +3,21 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-      images: {
-    remotePatterns: [
+    
+  async rewrites() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'image.tmdb.org',
-        port: '',
-        pathname: '/t/p/**',
+        source: "/ingest/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
       },
-    ],
+      {
+        source: "/ingest/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
+    ];
   },
-    typescript: {
-    ignoreBuildErrors: true,
-  },
+  // This is required to support PostHog trailing slash API requests
+  skipTrailingSlashRedirect: true, 
 };
 
 export default config;
