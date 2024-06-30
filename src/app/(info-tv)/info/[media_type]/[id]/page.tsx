@@ -6,7 +6,6 @@ import { Icons } from "@/components/ui/icons";
 import { Disqus } from "@/app/(info-tv)/_components/disqus";
 import { ImageComponent } from "@/components/image-component";
 
-
 interface Movie {
   id: string;
   media_type: string;
@@ -19,6 +18,36 @@ interface Movie {
   tagline: string;
   backdrop_path: string;
 }
+
+export async function generateMetadata({ params }: { params: { media_type: string, id: string } }) {
+  const { media_type, id } = params;
+  const res = await fetch(
+    `https://api.themoviedb.org/3/${media_type}/${id}?language=en-US`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+      },
+    },
+  );
+  const data = await res.json() as Movie;
+
+  const {
+    name,
+    original_name,
+    overview,
+    title, 
+  } = data;
+
+  return {
+    title: name || original_name || title,
+    description: overview,
+  }
+}
+
+
+
 export default async function Page({ params: { media_type, id } }: { params: { media_type: string, id: string } }) {
   const res = await fetch(
     `https://api.themoviedb.org/3/${media_type}/${id}?language=en-US`,

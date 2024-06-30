@@ -10,7 +10,10 @@ import { CSPostHogProvider } from "@/config/posthog-provider";
 export const runtime = "edge";
 
 export const metadata = {
-  title: "ReelHype",
+  title: {
+    template: "%s | ReelHype",
+    default: "ReelHype",
+  },
   description: "Ultimate Destination for Movie & TV Trailers",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
