@@ -107,7 +107,7 @@ export function VideoPlayer({ sources, info }: Videoplayer) {
           </div>
         </div>
 
-        <ScrollArea className="lg:h-[70px] h-[500px] lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
+        <ScrollArea className="lg:max-h-[700px] lg:h-full h-[500px] lg:max-w-[500px] md:w-full w-full rounded-md border p-4">
           {isLoading ? (
             <p>Loading...</p>
           ) : error ? (
