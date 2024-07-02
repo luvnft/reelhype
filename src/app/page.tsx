@@ -51,8 +51,10 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <Button size={'lg'} className="rounded-full bg-[#FF5722] hover:bg-[#b84c2c] text-white font-mono">
+            <Button asChild size={'lg'} className="rounded-full bg-[#FF5722] hover:bg-[#b84c2c] text-white font-mono">
+              <Link href="/Trending">
               Watch Trailers Now
+              </Link>
             </Button>
           </section>
 
