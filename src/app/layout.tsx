@@ -7,6 +7,7 @@ import { MainNav } from "@/components/main-nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CSPostHogProvider } from "@/config/posthog-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export const runtime = "edge";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
               <div className="w-full bg-black/60 px-3 py-3">
                 <MainNav />
                 <SpeedInsights />
+                <Analytics/>
               </div>
  
               {children}
