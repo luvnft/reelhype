@@ -6,6 +6,11 @@ import Link from "next/link";
 import { Icons } from "@/components/ui/icons";
 
 import { useQuery } from "@tanstack/react-query";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Search",
+};
 
 interface Movie {
   adult: boolean;
@@ -63,7 +68,7 @@ const fetchSearchResults = async (query: string) => {
 const MultiSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { data, isLoading, isError } = useQuery({
+  const { data } = useQuery({
     queryKey: ["search", searchQuery],
     queryFn: () => fetchSearchResults(searchQuery),
 
@@ -73,12 +78,6 @@ const MultiSearch = () => {
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
-  let searchResults: Movie[] = [];
-
-  if (!isLoading && !isError && data) {
-    // Process fetched data
-    searchResults = data.results;
-  }
 
   return (
     <div className="flex flex-col gap-6">

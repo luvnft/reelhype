@@ -1,7 +1,7 @@
 import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
 import { ImageComponent } from "@/components/image-component";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Trending",
