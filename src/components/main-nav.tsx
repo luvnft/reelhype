@@ -1,9 +1,13 @@
+"use client";
+
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Icons } from "./ui/icons";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 export function MainNav() {
+  const pathname = usePathname();
   return (
     <nav className="mx-auto flex w-full max-w-[1200px] ">
       <section className="flex w-full flex-row items-center justify-between ">
@@ -13,37 +17,32 @@ export function MainNav() {
           </Link>
 
           <div className="hidden flex-row items-center gap-[52px] lg:flex ">
-            <Button variant={"ghost"} size={"sm"} asChild>
-              <Link className="text-lg " href={"/Trending"}>
-                Trending
-              </Link>
-            </Button>
-            <Button variant={"ghost"} size={"sm"} asChild>
-              <Link className="text-lg " href={"/"}>
-                Upcoming
-              </Link>
-            </Button>
-            <Button variant={"ghost"} size={"sm"} asChild>
-              <Link className="text-lg " href={"/"}>
-                Live Premiers
-              </Link>
-            </Button>
-            <Button variant={"ghost"} size={"sm"} asChild>
-              <Link className="text-lg " href={"/"}>
-                Communities
-              </Link>
-            </Button>
+            <Link
+              className={`text-lg ${pathname === "/Trending" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
+              href={"/Trending"}
+            >
+              Trending
+            </Link>
+
+            <Link
+              className={`text-lg ${pathname === "/Search" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
+              href={"/Search"}
+            >
+              Search
+            </Link>
           </div>
         </div>
 
         <header>
-            <SignedOut>
+          <SignedOut>
+            <Button asChild size={"sm"} className="rounded-full">
               <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+            </Button>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </header>
       </section>
     </nav>
   );
