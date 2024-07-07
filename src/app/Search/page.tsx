@@ -6,11 +6,6 @@ import Link from "next/link";
 import { Icons } from "@/components/ui/icons";
 
 import { useQuery } from "@tanstack/react-query";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Search",
-};
 
 interface Movie {
   adult: boolean;

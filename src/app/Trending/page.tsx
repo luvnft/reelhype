@@ -1,11 +1,6 @@
 import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
 import { ImageComponent } from "@/components/image-component";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Trending",
-};
 
 interface Movie {
   id: string;
