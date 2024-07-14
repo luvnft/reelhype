@@ -2,15 +2,7 @@
 
 import { CldImage } from "next-cloudinary";
 import { cn } from "@/lib/utils";
-
-interface ImageComponentProps {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  className?: string;
-  fill?: boolean;
-}
+import type { ImageComponentProps } from "@/types/tmdbs";
 
 export function ImageComponent({
   src,
