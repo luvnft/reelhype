@@ -34,9 +34,9 @@ export function MainNav() {
           </div>
         </div>
 
-        <header className="flex flex-row items-center gap-2">
+        <header className="flex flex-row items-start gap-5">
           <Link className='hover:bg-gray-950 transition-all duration-300 cursor-pointer lg:hidden block' href='/Search'>
-          <Search />
+          <Search className="h-[28px] w-[28px]" />
           </Link>
           <div>
             <SignedOut>
