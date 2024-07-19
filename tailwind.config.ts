@@ -23,8 +23,9 @@ const config = {
         'white-lg': '0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 8px 10px -6px rgba(255, 255, 255, 0.1)',
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        mono: ["var(--font-urbanist)", ...defaultTheme.fontFamily.mono],
+        secondary: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],
+        primary: ["var(--font-lato)", ...defaultTheme.fontFamily.mono],
+        accent: ["var(--font-pacifico)", ...defaultTheme.fontFamily.sans]
       },
         
       colors: {

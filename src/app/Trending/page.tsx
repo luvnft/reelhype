@@ -19,9 +19,9 @@ export default async function Trending() {
   const data = await fetchTrendingImages();
 
   return (
-    <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-3 py-10">
-      <h1 className="px-3 font-mono text-3xl font-medium">Trending</h1>
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-5">
+    <div className="mx-auto lg:mt-20 mt-16 flex w-full max-w-[1200px] flex-col lg:gap-10 gap-6 px-3 py-10">
+      <h1 className="px-3 font-secondary text-2xl lg:text-4xl ">Trending</h1>
+      <div className="grid grid-cols-2 lg:gap-3 gap-2 lg:grid-cols-5 lg:gap-5">
         {data.results.map((trending) => (
           <Link
             href={`/info/${trending.media_type}/${trending.id}`}
@@ -36,12 +36,12 @@ export default async function Trending() {
               className="h-auto w-full max-w-[198.10px] rounded-xl border border-gray-500 object-cover transition-all hover:shadow-sm hover:shadow-white/30 hover:outline hover:outline-2 hover:outline-stone-400 lg:h-[296.51px]"
             />
             <div className="py-3 pr-3">
-              <h2 className="font-mono  text-lg font-normal text-white">
+              <h2 className="font-secondary  lg:text-lg text-sm font-normal text-white">
                 {trending.title || trending.name}
               </h2>
               <div className="flex flex-row items-center gap-2">
                 <Icons.star />
-                <p className="font-mono text-sm font-normal text-white">
+                <p className="font-primary text-sm font-normal text-white">
                   {trending.vote_average}
                 </p>
               </div>

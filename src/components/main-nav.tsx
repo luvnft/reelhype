@@ -9,11 +9,12 @@ import { usePathname } from "next/navigation";
 export function MainNav() {
   const pathname = usePathname();
   return (
-    <nav className="mx-auto flex w-full max-w-[1200px] ">
+    <div className="w-full bg-[#000000] fixed left-0 right-0 top-0 z-50">
+    <nav className="mx-auto py-4 lg:px-0 px-3   flex w-full max-w-[1200px] ">
       <section className="flex w-full flex-row items-center justify-between ">
         <div className="flex flex-row items-center gap-[52px]">
           <Link href={"/"}>
-            <Icons.logo className="h-[59px] w-[105px]" />
+            <h1 className="text-lg text-[#F5C111] font-accent">Convofy</h1>
           </Link>
 
           <div className="hidden flex-row items-center gap-[52px] lg:flex ">
@@ -45,5 +46,6 @@ export function MainNav() {
         </header>
       </section>
     </nav>
+    </div>
   );
 }

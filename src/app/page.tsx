@@ -36,14 +36,14 @@ export default async function HomePage() {
         <Background randomItem={datas} />
       </div>
 
-      <div className="absolute top-0 right-0 left-0 bottom-0 h-full w-full bg-gradient-to-b from-transparent to-black " />
+      <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-transparent to-black " />
 
-      <header className="absolute top-0 bottom-0 right-0 left-0">
+      <header className="absolute inset-0">
         <div className="flex flex-col items-center justify-center max-w-[1200px] p-5 mx-auto w-full h-full">
 
           <section className="flex flex-col items-center justify-center w-full h-full gap-[32px]">
             <div className="flex flex-col items-center gap-4">
-              <h1 className="lg:text-6xl text-4xl font-bold text-center font-mono text-white gap-4">
+              <h1 className="lg:text-6xl text-4xl  text-center font-secondary text-white gap-4">
                 Unleash the Hype: Your Ultimate Destination for Movie & TV Trailers
               </h1>
               <p className="text-xl text-center">
@@ -51,7 +51,7 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <Button asChild size={'lg'} className="rounded-full bg-[#FF5722] hover:bg-[#b84c2c] text-white font-mono">
+            <Button asChild size={'lg'} className="rounded-full bg-[#FF5722] hover:bg-[#b84c2c] text-white ">
               <Link href="/Trending">
               Watch Trailers Now
               </Link>

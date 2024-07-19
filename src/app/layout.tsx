@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 
-import { urbanist, inter } from "@/styles/fonts/font";
+import { pacifico, lato, poppins } from "@/styles/fonts/font";
 import { cn } from "@/lib/utils";
 import { QueryProvider } from "@/config/query-provider";
 import { MainNav } from "@/components/main-nav";
@@ -13,8 +13,8 @@ export const runtime = "edge";
 
 export const metadata = {
   title: {
-    template: "%s | ReelHype",
-    default: "ReelHype",
+    template: "%s | Convofy",
+    default: "Convofy",
   },
   description: "Ultimate Destination for Movie & TV Trailers",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -32,13 +32,14 @@ export default function RootLayout({
           <QueryProvider>
             <body
               className={cn(
-                "dark min-h-screen bg-black font-sans text-foreground antialiased",
-                inter.variable,
-                urbanist.variable,
+                "dark min-h-screen bg-black font-primary text-foreground antialiased",
+                lato.variable,
+                poppins.variable,
+                pacifico.variable
               )}
-            >
-              <div className="w-full bg-black/60 px-3 py-3">
-                <MainNav />
+            ><MainNav />
+              <div className="w-full bg-black/60 ">
+                
                 <SpeedInsights />
                 <Analytics/>
               </div>

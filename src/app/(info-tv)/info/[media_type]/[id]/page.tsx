@@ -127,7 +127,7 @@ export default async function Page({
             </div>
 
             <div className="flex w-full max-w-[1200px]  flex-col gap-3 px-3  lg:gap-4 lg:px-0">
-              <h1 className="font-mono text-2xl lg:text-4xl">
+              <h1 className="font-secondary text-2xl lg:text-4xl">
                 {name || original_name || title}
               </h1>
 
