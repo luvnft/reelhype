@@ -2,14 +2,14 @@
 
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Icons } from "./ui/icons";
+import { Search } from 'lucide-react';
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
 export function MainNav() {
   const pathname = usePathname();
   return (
-    <div className="w-full bg-[#000000] fixed left-0 right-0 top-0 z-50">
+    <div className="w-full bg-[#0A0B0B] fixed left-0 right-0 top-0 z-50">
     <nav className="mx-auto py-4 lg:px-0 px-3   flex w-full max-w-[1200px] ">
       <section className="flex w-full flex-row items-center justify-between ">
         <div className="flex flex-row items-center gap-[52px]">
@@ -34,8 +34,12 @@ export function MainNav() {
           </div>
         </div>
 
-        <header>
-          <SignedOut>
+        <header className="flex flex-row items-center gap-2">
+          <Link className='hover:bg-gray-950 transition-all duration-300 cursor-pointer lg:hidden block' href='/Search'>
+          <Search />
+          </Link>
+          <div>
+            <SignedOut>
             <Button asChild size={"sm"} className="rounded-full">
               <SignInButton />
             </Button>
@@ -43,6 +47,8 @@ export function MainNav() {
           <SignedIn>
             <UserButton />
           </SignedIn>
+          </div>
+          
         </header>
       </section>
     </nav>

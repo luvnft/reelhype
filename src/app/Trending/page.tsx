@@ -19,14 +19,14 @@ export default async function Trending() {
   const data = await fetchTrendingImages();
 
   return (
-    <div className="mx-auto lg:mt-20 mt-16 flex w-full max-w-[1200px] flex-col lg:gap-10 gap-6 px-3 py-10">
+    <div className="mx-auto lg:mt-20 mt-16 flex w-full max-w-[1200px] flex-col lg:gap-10 gap-6 px-2 py-10">
       <h1 className="px-3 font-secondary text-2xl lg:text-4xl ">Trending</h1>
-      <div className="grid grid-cols-2 lg:gap-3 gap-2 lg:grid-cols-5 lg:gap-5">
+      <div className="grid grid-cols-2 lg:gap-3 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
         {data.results.map((trending) => (
           <Link
             href={`/info/${trending.media_type}/${trending.id}`}
             key={trending.id}
-            className="flex cursor-pointer flex-col items-start gap-1 px-[13px] py-[9px]"
+            className="flex cursor-pointer flex-col items-start gap-1 px-[13px]"
           >
             <ImageComponent
               width={198.1}

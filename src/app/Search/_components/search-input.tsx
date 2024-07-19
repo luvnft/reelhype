@@ -36,7 +36,7 @@ export function Searchinput() {
         <input
           type="text"
           placeholder="What movie/tv trailer do you want to watch?"
-          className="block h-[70px] w-full rounded-full border border-gray-300 bg-white p-2.5 pl-16 text-xl font-medium text-black placeholder-black/50 focus:ring-2 focus:ring-white  "
+          className="block lg:h-[70px] h-[50px] w-full rounded-full border border-gray-300 bg-[#0A0B0B] p-2.5 pl-5 text-white lg:text-xl text-sm font-medium text-black placeholder-gray-100 focus:ring-2 focus:ring-white  "
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
@@ -53,10 +53,10 @@ export function Searchinput() {
               alt={search.title ?? search.original_title ?? search.name ?? ''}
               width={150}
               height={150}
-              className="h-auto w-[180px] rounded-xl border border-gray-500 transition-all hover:shadow-sm hover:shadow-white/30 hover:outline hover:outline-2 hover:outline-stone-400 lg:h-full lg:w-full"
+              className="h-auto w rounded-xl border border-gray-500 transition-all hover:shadow-sm hover:shadow-white/30 hover:outline hover:outline-2 hover:outline-stone-400 lg:h-full lg:w-full"
             />
             <div>
-              <p className="font-mono  text-lg  text-white">
+              <p className="font-secondary  lg:text-lg text-sm  text-white">
                 {search.title ?? search.original_title ?? search.name}
               </p>
               <div className="flex flex-row items-center gap-3">
@@ -64,7 +64,7 @@ export function Searchinput() {
                   <Icons.star />
                   {search.vote_average}
                 </h1>
-                <div className="h-fit w-fit rounded border border-gray-500 px-2 text-sm  text-gray-500">
+                <div className="h-fit w-fit  text-sm  text-gray-500">
                   {search.media_type}
                 </div>
               </div>
