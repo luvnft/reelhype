@@ -73,7 +73,6 @@ async function fetchTrendingImages() {
   );
 
   const data = (await res.json()) as MovieData;
-  return data;
   
   await redis.set("trending", JSON.stringify(data));
   return data;
