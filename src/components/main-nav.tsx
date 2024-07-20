@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 export function MainNav() {
   const pathname = usePathname();
   return (
-    <div className="w-full bg-[#0A0B0B] fixed left-0 right-0 top-0 z-50">
+    <div className="w-full bg-[#0A0B0B]/30 backdrop-blur-xl  fixed left-0 right-0 top-0 z-50">
     <nav className="mx-auto py-4 lg:px-0 px-3   flex w-full max-w-[1200px] ">
       <section className="flex w-full flex-row items-center justify-between ">
         <div className="flex flex-row items-center gap-[52px]">
@@ -30,6 +30,12 @@ export function MainNav() {
               href={"/Search"}
             >
               Search
+            </Link>
+            <Link
+              className={`text-lg ${pathname === "/Story" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
+              href={"/story"}
+            >
+              Story
             </Link>
           </div>
         </div>
