@@ -1,6 +1,7 @@
 import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
 import { ImageComponent } from "@/components/image-component";
+import {redis} from "@/lib/redis"
 
 interface Movie {
   id: string;
@@ -54,6 +55,11 @@ export default async function Trending() {
 }
 
 async function fetchTrendingImages() {
+  const cachedData = await redis.get("trending");
+  if (cachedData) {
+    return cachedData as MovieData;
+  }
+  
   const res = await fetch(
     "https://api.themoviedb.org/3/trending/all/day?language=en-US",
     {
@@ -67,5 +73,8 @@ async function fetchTrendingImages() {
   );
 
   const data = (await res.json()) as MovieData;
+  return data;
+  
+  await redis.set("trending", JSON.stringify(data));
   return data;
 }

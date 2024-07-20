@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ImageComponent } from "@/components/image-component";
 import Link from "next/link";
 import { Icons } from "@/components/ui/icons";
+import Loading from "@/components/ui/loading";
 
 // Define the type for search results
 interface SearchResult {
@@ -20,7 +21,7 @@ interface SearchResult {
 export function Searchinput() {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { data } = useQuery<{ results: SearchResult[] }>({
+  const { data, isLoading } = useQuery<{ results: SearchResult[] }>({
     queryKey: ["search", searchQuery],
     queryFn: async () => await fetchSearchResults(searchQuery),
     enabled: searchQuery !== "", // Only fetch data when searchQuery is not empty
@@ -41,6 +42,7 @@ export function Searchinput() {
           onChange={handleSearchInputChange}
         />
       </div>
+      {isLoading && (<Loading/>)}
       <div className="grid grid-cols-2 justify-center gap-x-5 gap-y-6 lg:grid-cols-5 lg:gap-x-3">
         {data?.results?.map((search) => (
           <Link

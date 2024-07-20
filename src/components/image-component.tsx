@@ -3,6 +3,7 @@
 import { CldImage } from "next-cloudinary";
 import { cn } from "@/lib/utils";
 import type { ImageComponentProps } from "@/types/tmdbs";
+import { useState, useEffect } from "react";
 
 export function ImageComponent({
   src,
@@ -14,9 +15,16 @@ export function ImageComponent({
 
   ...props
 }: ImageComponentProps) {
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setError(false)
+  }, [src])
+
   return (
     <CldImage
-      src={src}
+    onError={() => setError(true)}
+      src={error ? 'https://placehold.jp/414144/ffffff/200x300.png?text=No%20Image' : src}
       deliveryType="fetch"
       alt={alt}
       width={width}
