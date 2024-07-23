@@ -4,7 +4,7 @@ import { pacifico, lato, poppins } from "@/styles/fonts/font";
 import { cn } from "@/lib/utils";
 import { QueryProvider } from "@/config/query-provider";
 import { MainNav } from "@/components/main-nav";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, GoogleOneTap } from "@clerk/nextjs";
 import { CSPostHogProvider } from "@/config/posthog-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -37,11 +37,13 @@ export default function RootLayout({
                 poppins.variable,
                 pacifico.variable
               )}
-            ><MainNav />
+            >
+              <MainNav />
               <div className="w-full bg-black/60 ">
                 
                 <SpeedInsights />
                 <Analytics/>
+                <GoogleOneTap />
               </div>
  
               {children}

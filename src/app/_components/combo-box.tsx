@@ -12,7 +12,7 @@ import { fetchSearchResults } from "@/utils/tmdb";
 import { cn } from "@/lib/utils";
 import { ImageComponent } from "@/components/image-component";
 import { Icons } from "@/components/ui/icons";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface SearchResult {
   id: number;
@@ -27,6 +27,7 @@ interface SearchResult {
 export default function ComboBox() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedValue, setSelectedValue] = useState<SearchResult | null>(null);
+  const router = useRouter()
 
   const { data } = useQuery<{ results: SearchResult[] }>({
     queryKey: ["search", searchQuery],
@@ -60,8 +61,9 @@ export default function ComboBox() {
             className="group flex cursor-default select-none items-center gap-2 rounded-lg px-3 py-1.5 data-[focus]:bg-white/10"
             key={search.id}
             value={search}
+            onClick={() => router.push(`/info/${search.media_type}/${search.id}`)}
           >
-            <Link href={`/info/${search.media_type}/${search.id}`} className="flex flex-row items-start gap-3">
+            <div className="flex flex-row items-start gap-3">
               <ImageComponent
                 src={`https://image.tmdb.org/t/p/original${search.poster_path}`}
                 alt={`${search.title ?? search.original_title ?? search.name}`}
@@ -77,7 +79,7 @@ export default function ComboBox() {
                 </div>
                 <h1>{search.media_type}</h1>
               </div>
-            </Link>
+            </div>
           </ComboboxOption>
         ))}
       </ComboboxOptions>

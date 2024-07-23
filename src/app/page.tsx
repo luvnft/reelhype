@@ -41,10 +41,10 @@ export default async function HomePage() {
       <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-black/70 to-black " />
 
       <header className="absolute inset-0">
-        <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col items-center justify-center p-5">
-          <section className="mt-32 flex h-full w-full max-w-[860px]  flex-col gap-[32px]">
+        <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col items-center justify-center lg:p-5 p-3">
+          <section className="lg:mt-32 mt-24 flex h-full w-full max-w-[860px]  flex-col lg:gap-[32px] gap-[20px]">
             
-            <div className="mx-auto flex w-full max-w-[500px] flex-row justify-between rounded-full bg-black/50 px-5 py-3 backdrop-blur-xl">
+            <div className="mx-auto flex w-full max-w-[500px] flex-row justify-between rounded-full bg-black/50 lg:px-5 px-3 lg:py-3 py-1.5 backdrop-blur-xl">
               <div className="flex flex-row items-center gap-3">
                 <h1 className="text-white lg:text-lg text-sm">{original_name ?? name ?? title}</h1>
                 <div className="flex flex-row items-center gap-3">
@@ -55,10 +55,10 @@ export default async function HomePage() {
 
               <Link
                 href={`/info/${media_type}/${id}`}
-                className="flex h-fit flex-row gap-1 rounded-full bg-white px-3 py-1.5 text-black"
+                className="flex h-fit flex-row items-center gap-1 rounded-full bg-white lg:px-3 px-1 lg:py-1.5 py-1 text-black"
               >
                 <h1 className="lg:text-lg text-sm">Watch Trailer</h1>
-                <ChevronRight className="stroke-black" />
+                <ChevronRight className="stroke-black lg:w-[24px] lg:h-[24px] h-[16px] w-[16px] " />
               </Link>
             </div>
             <div className="flex flex-col items-center gap-4">
