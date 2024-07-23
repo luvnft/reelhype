@@ -54,7 +54,7 @@ export default async function Trending() {
   );
 }
 
-async function fetchTrendingImages() {
+export async function fetchTrendingImages() {
   const cachedData = await redis.get("trending");
   if (cachedData) {
     return cachedData as MovieData;

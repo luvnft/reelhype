@@ -87,7 +87,7 @@ export function VideoPlayer({ sources, info }: VideoPlayerProps) {
           </div>
         </div>
 
-        <ScrollArea className="h-[500px] w-full rounded-md border p-4 md:w-full lg:h-full lg:max-h-[700px] lg:max-w-[500px]">
+        <ScrollArea className="h-[500px] bg-[#0A0B0B] w-full rounded-md border p-4 md:w-full lg:h-full lg:max-h-[700px] lg:max-w-[500px]">
           {info.map((item, index) => (
             <div
               key={item.key}
