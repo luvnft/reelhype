@@ -39,8 +39,8 @@ export default function RootLayout({
               )}
             >
               <MainNav />
-              <div className="w-full bg-black/60 ">
-                
+              
+              <div>
                 <SpeedInsights />
                 <Analytics/>
                 <GoogleOneTap />

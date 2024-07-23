@@ -48,7 +48,7 @@ export default function ComboBox() {
         aria-label="search results"
         placeholder="Search for a movie or TV show"
         onChange={handleSearchInputChange}
-        className="block h-[50px] w-full rounded-full border border-gray-300 bg-[#0A0B0B] p-2.5 pl-5 text-sm font-medium text-white placeholder-gray-100 focus:ring-2 focus:ring-white lg:h-[70px] lg:text-xl  "
+        className="block h-[50px] w-full rounded-full border border-[#F5C111] bg-[#28282B] p-2.5 pl-5 text-sm font-medium text-white placeholder-gray-100 focus:ring-2 focus:ring-[#F5C111] lg:h-[70px] lg:text-xl  "
       />
       <ComboboxOptions
         className={cn(

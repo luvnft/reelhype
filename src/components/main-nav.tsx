@@ -7,45 +7,47 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import MobileNav from "./mobile-nav";
 
+const navItems = [
+  {
+    name: "Discover",
+    href: "/Discover",
+  },
+  {
+    name: "Search",
+    href: "/Search",
+  },
+];
+
 export function MainNav() {
   const pathname = usePathname();
+
   return (
     <div className="fixed left-0 right-0  top-0 z-50 w-full bg-[#0A0B0B]/30 backdrop-blur-xl">
-      
       <nav className="mx-auto flex w-full max-w-[1200px]   px-3 py-4 lg:px-0 ">
-      
         <section className="flex w-full flex-row items-center justify-between ">
           <div className="flex flex-row items-center gap-[52px]">
-            <div className="flex flex-row gap-4 items-center">
-            <MobileNav />
+            <div className="flex flex-row items-center gap-4">
+              <MobileNav />
               <Link href={"/"}>
-              <h1 className="font-accent text-lg text-[#F5C111]">Convofy</h1>
-            </Link>
-           
-            </div>
-            
-
-            <div className="hidden flex-row items-center gap-[52px] lg:flex ">
-              <Link
-                className={`text-lg ${pathname === "/Trending" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
-                href={"/Trending"}
-              >
-                Trending
-              </Link>
-
-              <Link
-                className={`text-lg ${pathname === "/Search" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
-                href={"/Search"}
-              >
-                Search
-              </Link>
-              <Link
-                className={`text-lg ${pathname === "/Story" ? "text-white underline underline-offset-8" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
-                href={"/story"}
-              >
-                Story
+                <h1 className="font-accent text-lg text-[#F5C111]">Convofy</h1>
               </Link>
             </div>
+          </div>
+
+          <div className="hidden flex-row items-center gap-[52px] lg:flex">
+            {navItems.map((nav, index) => {
+              const { name, href } = nav;
+
+              return (
+                <Link
+                  key={index}
+                  className={`text-lg ${pathname === href ? "text-white underline decoration-[#F5C111] decoration-wavy decoration-2 underline-offset-4" : "text-gray-300 transition-all duration-300 hover:text-white"}`}
+                  href={href}
+                >
+                  {name}
+                </Link>
+              );
+            })}
           </div>
 
           <header className="flex flex-row items-center gap-5">
@@ -55,6 +57,7 @@ export function MainNav() {
             >
               <Search className="h-[28px] w-[28px]" />
             </Link>
+
             <div>
               <SignedOut>
                 <Button asChild size={"sm"} className="rounded-full">
