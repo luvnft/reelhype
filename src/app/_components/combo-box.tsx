@@ -10,6 +10,9 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchSearchResults } from "@/utils/tmdb";
 import { cn } from "@/lib/utils";
+import { ImageComponent } from "@/components/image-component";
+import { Icons } from "@/components/ui/icons";
+import Link from "next/link";
 
 interface SearchResult {
   id: number;
@@ -25,7 +28,7 @@ export default function ComboBox() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedValue, setSelectedValue] = useState<SearchResult | null>(null);
 
-  const { data, isLoading } = useQuery<{ results: SearchResult[] }>({
+  const { data } = useQuery<{ results: SearchResult[] }>({
     queryKey: ["search", searchQuery],
     queryFn: async () => await fetchSearchResults(searchQuery),
     enabled: searchQuery !== "", // Only fetch data when searchQuery is not empty
@@ -41,7 +44,6 @@ export default function ComboBox() {
         displayValue={(item: SearchResult) =>
           item?.title ?? item?.original_title ?? item?.name ?? ""
         }
-        
         aria-label="search results"
         placeholder="Search for a movie or TV show"
         onChange={handleSearchInputChange}
@@ -59,11 +61,23 @@ export default function ComboBox() {
             key={search.id}
             value={search}
           >
-            {({ active }) => (
-              <div className={`p-2 ${active ? "bg-blue-500 text-white" : ""}`}>
-                {search.title ?? search.original_title ?? search.name}
+            <Link href={`/info/${search.media_type}/${search.id}`} className="flex flex-row items-start gap-3">
+              <ImageComponent
+                src={`https://image.tmdb.org/t/p/original${search.poster_path}`}
+                alt={`${search.title ?? search.original_title ?? search.name}`}
+                width={200}
+                height={200}
+                className="w-[70px] h-auto object-cover rounded"
+              />
+              <div>
+                <h1>{search.title ?? search.original_title ?? search.name}</h1>
+                <div className="flex flex-row gap-1 items-center">
+                  <Icons.star />
+                  <h1>{search.vote_average}</h1>
+                </div>
+                <h1>{search.media_type}</h1>
               </div>
-            )}
+            </Link>
           </ComboboxOption>
         ))}
       </ComboboxOptions>

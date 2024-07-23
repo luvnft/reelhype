@@ -22,7 +22,7 @@ export default async function Trending() {
   return (
     <div className="mx-auto lg:mt-20 mt-16 flex w-full max-w-[1200px] flex-col lg:gap-10 gap-6 px-2 py-10">
       <h1 className="px-3 font-secondary text-2xl lg:text-4xl ">Trending</h1>
-      <div className="grid grid-cols-2 lg:gap-3 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
+      <div className="grid grid-cols-2 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
         {data.results.map((trending) => (
           <Link
             href={`/info/${trending.media_type}/${trending.id}`}
@@ -54,7 +54,7 @@ export default async function Trending() {
   );
 }
 
-export async function fetchTrendingImages() {
+async function fetchTrendingImages() {
   const cachedData = await redis.get("trending");
   if (cachedData) {
     return cachedData as MovieData;
