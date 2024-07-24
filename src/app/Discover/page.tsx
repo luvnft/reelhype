@@ -2,6 +2,13 @@ import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
 import { ImageComponent } from "@/components/image-component";
 import {redis} from "@/lib/redis"
+import type {Metadata} from "next"
+
+export const metadata: Metadata = {
+  title: "Discover",
+  description: "Discover movies and tv trailers",
+};
+
 
 interface Movie {
   id: string;

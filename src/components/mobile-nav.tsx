@@ -25,9 +25,9 @@ export default function MobileNav() {
           <div className="grid gap-4 py-4">
             <Link
               className={`text-lg ${pathname === "/Trending" ? "text-white" : "text-gray-300 "}`}
-              href={"/Trending"}
+              href={"/Discover"}
             >
-              Trending
+              Discover
             </Link>
 
             <Link
@@ -35,12 +35,6 @@ export default function MobileNav() {
               href={"/Search"}
             >
               Search
-            </Link>
-            <Link
-              className={`text-lg ${pathname === "/Story" ? "text-white " : "text-gray-300"}`}
-              href={"/story"}
-            >
-              Story
             </Link>
           </div>
         </SheetContent>

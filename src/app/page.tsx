@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Background, RandomItems } from "./_components/background";
 import { Icons } from "@/components/ui/icons";
 import { ChevronRight } from "lucide-react";
-import ComboBox from "./_components/combo-box";
+import { Button } from "@/components/ui/button";
 
 interface Movie {
   id: string;
@@ -34,7 +34,7 @@ export default async function HomePage() {
 
   return (
     <main className="relative flex min-h-screen">
-      <div className="min-h-screen w-full bg-black/20">
+      <div className="min-h-screen w-full bg-black/10">
         <Background randomItem={datas} />
       </div>
 
@@ -71,7 +71,10 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <ComboBox />
+            <Button asChild className="rounded-full bg-[#F5C111] ">
+              <Link href="/Discover">Discover Trailers</Link>
+            </Button>
+
           </section>
         </div>
       </header>
