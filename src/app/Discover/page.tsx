@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ImageComponent } from "@/components/image-component";
 import {redis} from "@/lib/redis"
 import type {Metadata} from "next"
+import type { MovieData } from '@/types/tmdbs'
+import {TrendingCarousel} from "@/app/Discover/_components/trending-carousel"
+
 
 export const metadata: Metadata = {
   title: "Discover",
@@ -10,25 +13,14 @@ export const metadata: Metadata = {
 };
 
 
-interface Movie {
-  id: string;
-  media_type: string;
-  poster_path: string;
-  title: string;
-  vote_average: number;
-  name: string;
-}
-
-interface MovieData {
-  results: Movie[];
-}
 
 export default async function Trending() {
   const data = await fetchTrendingImages();
 
   return (
-    <div className="mx-auto lg:mt-20 mt-16 flex w-full max-w-[1200px] flex-col lg:gap-10 gap-6 px-2 py-10">
-      <h1 className="px-3 font-secondary text-2xl lg:text-4xl ">Trending</h1>
+    <div className="mx-auto lg:mt-20 mt-20 flex w-full max-w-[1400px] flex-col lg:gap-10 gap-6 px-2 ">
+      
+      <TrendingCarousel/>
       <div className="grid grid-cols-2 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
         {data.results.map((trending) => (
           <Link
