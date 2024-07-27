@@ -5,13 +5,13 @@ const TermsOfService = () => (
         <h1 className="text-3xl font-bold mb-4">ReelHype Terms of Service</h1>
 
         <p>
-            Welcome to ReelHype! These Terms of Service ("ToS") govern your use of our movie and TV trailer platform. By accessing or using ReelHype, you agree to be bound by these ToS. Please read them carefully.
+            Welcome to ReelHype! These Terms of Service (&quot;ToS&quot;) govern your use of our movie and TV trailer platform. By accessing or using ReelHype, you agree to be bound by these ToS. Please read them carefully.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8">Acceptance of Terms</h2>
 
         <p>
-            By using ReelHype, you affirm that you are at least 13 years old and capable of entering into a legally binding agreement. If you are under 18, you represent that you have your parent or guardian's permission to use our services.
+            By using ReelHype, you affirm that you are at least 13 years old and capable of entering into a legally binding agreement. If you are under 18, you represent that you have your parent or guardian&apos;s permission to use our services.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8">User Accounts</h2>
@@ -47,7 +47,7 @@ const TermsOfService = () => (
         <h2 className="text-2xl font-semibold mt-8">Contact Us</h2>
 
         <p>
-            If you have any questions or concerns about these ToS, please contact us at [email protected]
+            If you have any questions or concerns about these ToS, please contact us at [email&#160;protected]
         </p>
     </div>
 );
