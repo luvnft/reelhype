@@ -9,7 +9,7 @@ export async function generateMetadata({
     params: { media_type: string; id: string };
 }) {
     const { media_type, id } = params;
-    const data = await FilmInfo({ media_type, id });
+    const data = await FilmInfo({ media_type: media_type, id: id });
 
     const { name, original_name, overview, title } = data;
 
@@ -24,7 +24,7 @@ export default async function Page({
 }: {
     params: { media_type: string; id: string };
 }) {
-    const data = await FilmInfo({ media_type, id });
+    const data = await FilmInfo({ media_type: media_type, id: id });
 
     const { name, original_name, title, backdrop_path } = data;
 
