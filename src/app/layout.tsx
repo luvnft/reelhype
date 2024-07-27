@@ -10,6 +10,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const runtime = 'edge';
+export const revalidate = 3600 // revalidate at most every hour
 
 export const metadata = {
     title: {

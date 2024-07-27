@@ -1,11 +1,6 @@
-import { redis } from '@/lib/redis';
 import type { Movie, MovieData } from '@/types/tmdb-types';
 
 export async function TrendingFilms() {
-    const cachedData = await redis.get('trending');
-    if (cachedData) {
-        return cachedData as MovieData;
-    }
     const res = await fetch(
         'https://api.themoviedb.org/3/trending/all/day?language=en-US',
         {
@@ -14,12 +9,10 @@ export async function TrendingFilms() {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
             },
-            cache: 'no-store',
         }
     );
 
     const data = (await res.json()) as MovieData;
-    await redis.set('trending', JSON.stringify(data));
 
     return data;
 }

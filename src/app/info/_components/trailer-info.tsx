@@ -19,7 +19,7 @@ export const TrailerInfo: React.FC<TrailerInfoProps> = async ({
             `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
             {
                 headers: {
-                    Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
                 },
             }
         );
@@ -30,7 +30,7 @@ export const TrailerInfo: React.FC<TrailerInfoProps> = async ({
             `https://api.themoviedb.org/3/tv/${id}?language=en-US`,
             {
                 headers: {
-                    Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
                 },
             }
         );
@@ -44,7 +44,7 @@ export const TrailerInfo: React.FC<TrailerInfoProps> = async ({
                 `https://api.themoviedb.org/3/tv/${id}/season/${season.season_number}/videos?language=en-US`,
                 {
                     headers: {
-                        Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+                        Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
                     },
                 }
             );
@@ -62,7 +62,7 @@ export const TrailerInfo: React.FC<TrailerInfoProps> = async ({
             `https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`,
             {
                 headers: {
-                    Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
                 },
             }
         );
