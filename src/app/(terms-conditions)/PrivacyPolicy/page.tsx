@@ -31,7 +31,7 @@ const PrivacyPolicy = () => (
             We use your information to:
         </p>
         <ul>
-            <li>Provide, maintain, and improve ReelHype's services.</li>
+            <li>Provide, maintain, and improve ReelHype&apos;s services.</li>
             <li>Personalize your experience with tailored recommendations.</li>
             <li>Communicate with you about our services and updates.</li>
             <li>Analyze usage patterns to enhance our platform.</li>
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => (
 
         <ul>
             <li>You can manage your privacy settings in your account preferences.</li>
-            <li>You can opt-out of marketing emails by clicking the "unsubscribe" link.</li>
+            <li>You can opt-out of marketing emails by clicking the &quot;unsubscribe&quot; link.</li>
             <li>You can disable cookies in your browser settings, but this may limit some features.</li>
         </ul>
 
@@ -68,7 +68,7 @@ const PrivacyPolicy = () => (
         <h2 className="text-2xl font-semibold mt-8">Contact Us</h2>
 
         <p>
-            If you have any questions or concerns about this Privacy Policy, please contact us at [email protected]
+            If you have any questions or concerns about this Privacy Policy, please contact us at [email&#160;protected]
         </p>
     </div>
 );
