@@ -44,7 +44,7 @@ export default async function Image({ params }: { params: { media_type: string, 
     return { backdrops: [] } as BackdropProps;
   });
 
-  const backdropPath = post?.backdrops?.[0]?.file_path || '/fallback-image.jpg';
+  const backdropPath = post?.backdrops?.[0]?.file_path ?? '/fallback-image.jpg';
 
   return new ImageResponse(
     (
