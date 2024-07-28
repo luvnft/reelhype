@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import ImageComponent from '@/components/image-component';
 
 export const runtime = 'edge';
 
@@ -49,7 +50,8 @@ export default async function Image({ params }: { params: { media_type: string, 
   return new ImageResponse(
     (
       <div className='w-fit h-fit'>
-        <img 
+        <ImageComponent
+        fill={true}
           className='w-screen h-screen object-cover' 
           src={`https://image.tmdb.org/t/p/original${backdropPath}`} 
           alt={alt} 
