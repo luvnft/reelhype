@@ -5,7 +5,10 @@ import { TrendingFilms } from '@/server/tmdb';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-
+export const metadata: Metadata = {
+    title: 'Discover',
+    description: 'Discover movies and tv trailers',
+};
 
 export default async function Trending() {
     const data = await TrendingFilms();
