@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 import ImageComponent from '@/components/image-component';
 
-export const runtime = 'edge';
 
 export const alt = 'Convofy Info';
 export const size = {
