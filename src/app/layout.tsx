@@ -12,14 +12,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 export const runtime = 'edge';
 export const revalidate = 3600 // revalidate at most every hour
 
-export const metadata = {
-    title: {
-        template: '%s | Convofy',
-        default: 'Convofy',
-    },
-    description: 'Ultimate Destination for Movie & TV Trailers',
-    icons: [{ rel: 'icon', url: '/favicon.ico' }],
-};
 
 export default function RootLayout({
     children,
