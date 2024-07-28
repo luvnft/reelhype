@@ -57,9 +57,16 @@ export async function generateMetadata({
                { url: `https://image.tmdb.org/t/p/original${backdropPath}`,
                 width: 1200,
                 height: 630,
-                alt: `${name || original_name || title} Trailer`,}
+                alt: `${name ?? original_name ?? title} Trailer`,}
             ]
-        }
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${name ?? original_name ?? title} Trailer`,
+            description: overview,
+            images: `https://image.tmdb.org/t/p/original${backdropPath}`,
+            creator: "@evansso_",
+          },
     };
 }
 
