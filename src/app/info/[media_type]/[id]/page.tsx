@@ -14,7 +14,7 @@ export async function generateMetadata({
     const { name, original_name, overview, title } = data;
 
     return {
-        title: name || original_name || title,
+        title: `${name || original_name || title} Trailer`,
         description: overview,
     };
 }
