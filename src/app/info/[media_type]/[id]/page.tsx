@@ -53,12 +53,12 @@ export async function generateMetadata({
         title: `${name || original_name || title} Trailer`,
         description: overview,
         openGraph: {
-            images: {
-                url: `https://image.tmdb.org/t/p/original${backdropPath}`,
+            images: [
+               { url: `https://image.tmdb.org/t/p/original${backdropPath}`,
                 width: 1200,
                 height: 630,
-                alt: `${name || original_name || title} Trailer`,
-            }
+                alt: `${name || original_name || title} Trailer`,}
+            ]
         }
     };
 }
