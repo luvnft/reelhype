@@ -26,7 +26,7 @@ export default async function Trending() {
                         <ImageComponent
                             width={198.1}
                             height={296.51}
-                            src={`https://image.tmdb.org/t/p/original${trending.backdrop_path}`}
+                            src={`https://image.tmdb.org/t/p/original${trending.poster_path}`}
                             alt={trending.title || trending.name}
                             className="h-auto w-full max-w-[198.10px] rounded-xl border border-gray-500 object-cover transition-all hover:shadow-sm hover:shadow-white/30 hover:outline hover:outline-2 hover:outline-stone-400 lg:h-[296.51px]"
                         />
