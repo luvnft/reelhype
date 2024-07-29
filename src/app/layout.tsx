@@ -15,6 +15,8 @@ export const revalidate = 3600 // revalidate at most every hour
 import { Metadata, Viewport } from "next"
 import { siteConfig } from "@/config/site"
 
+import type {LayoutProps} from '@/types/layout-types'
+
 export const metadata: Metadata = {
     title: {
       default: siteConfig.name,
@@ -68,11 +70,10 @@ export const metadata: Metadata = {
     manifest: `${siteConfig.url}/sitemap.xml`,
   }
 
+
 export default function RootLayout({
     children,
-}: {
-    children: React.ReactNode;
-}) {
+}: LayoutProps) {
     return (
         <ClerkProvider>
             <CSPostHogProvider>

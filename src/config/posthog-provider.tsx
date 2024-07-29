@@ -4,6 +4,7 @@ import { useAuth, useUser } from '@clerk/nextjs';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
 import { useEffect } from 'react';
+import type {LayoutProps} from '@/types/layout-types'
 
 if (typeof window !== 'undefined') {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
@@ -11,7 +12,7 @@ if (typeof window !== 'undefined') {
         ui_host: 'https://us.posthog.com',
     });
 }
-export function CSPostHogProvider({ children }: { children: React.ReactNode }) {
+export function CSPostHogProvider({ children }: LayoutProps) {
     return (
         <PostHogProvider client={posthog}>
             <PosthogAuthWrapper>{children}</PosthogAuthWrapper>
@@ -19,7 +20,7 @@ export function CSPostHogProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
-function PosthogAuthWrapper({ children }: { children: React.ReactNode }) {
+function PosthogAuthWrapper({ children }: LayoutProps) {
     const auth = useAuth();
     const userInfo = useUser();
 

@@ -6,14 +6,6 @@ Convofy is an open-source movie and TV trailer watching platform. Our mission is
 
 At Convofy, we wanted to create a platform that would bring together the best of both worlds: the excitement of watching trailers and the community of movie and TV show enthusiasts. We wanted to create a platform where users could watch trailers together, join live audio conversations, and connect with like-minded individuals. It wasn't just about watching trailers; it was about experiencing them together.
 
-## Features
-
-- Watch trailers seamlessly.
-- Semantic Search (Coming Soon)
-- Join live audio conversations and chat in real-time. (Coming Soon)
-- Get AI-powered insights and summaries. (Coming Soon)
-- Engage with a community of movie and TV show enthusiasts. (Coming Soon)
-
 ## Tech Stack
 
 - Next.js
@@ -29,6 +21,16 @@ At Convofy, we wanted to create a platform that would bring together the best of
 - Comments (Disqus)
 - Database (Drizzle & NeonDB)
 - video player (Vidstack)
+- client-side data fetching (React Query)
+
+## Features
+
+- Watch trailers seamlessly.
+- Semantic Search (Coming Soon)
+- Join live audio conversations and chat in real-time. (Coming Soon)
+- Get AI-powered insights and summaries. (Coming Soon)
+- Engage with a community of movie and TV show enthusiasts. (Coming Soon)
+
 
 ## Contributing
 
