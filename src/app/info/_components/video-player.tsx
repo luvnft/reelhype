@@ -109,9 +109,7 @@ export function VideoPlayer({
                             </h1>
                         </div>
                     </div>
-                    <p className="text-gray-300 text-lg">
-                        {data?.overview}
-                    </p>
+                    <p className="text-lg text-gray-300">{data?.overview}</p>
                 </div>
                 <div>
                     <div className="mb-3 flex flex-row justify-between">

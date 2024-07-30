@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     ],
     authors: [
         {
-            name: 'evansso',
+            name: 'Convofy',
             url: 'https://reelhype.space',
         },
     ],
-    creator: 'evansso',
+    creator: 'Convofy',
     openGraph: {
         type: 'website',
         locale: 'en_US',
@@ -60,11 +60,10 @@ export const metadata: Metadata = {
         title: siteConfig.name,
         description: siteConfig.description,
         images: [siteConfig.ogImage],
-        creator: '@evansso_',
+        creator: '@Convofy',
     },
     icons: {
         icon: '/favicon.ico',
-        shortcut: '/favicon-16x16.png',
         apple: '/apple-icon.png',
     },
     manifest: `${siteConfig.url}/sitemap.xml`,

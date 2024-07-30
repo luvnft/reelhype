@@ -5,20 +5,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://reelhype.space',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'daily',
             priority: 1,
         },
         {
             url: 'https://reelhype.space/Discover',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
+            changeFrequency: 'daily',
+            priority: 1,
         },
         {
             url: 'https://reelhype.space/Search',
             lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
+            changeFrequency: 'daily',
+            priority: 1,
         },
     ];
 }
