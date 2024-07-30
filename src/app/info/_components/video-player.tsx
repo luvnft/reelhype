@@ -91,25 +91,25 @@ export function VideoPlayer({
                     <div className="flex flex-row items-center gap-3 ">
                         <div className="flex flex-row items-center gap-1">
                             <Calendar color="#F5C111" />
-                            <h1 className="text-sm lg:text-lg">
-                                {formattedDate}
+                            <h1 className="text-sm lg:text-xs">
+                                {formattedDate ?? 'Unavailable'}
                             </h1>
                         </div>
 
                         <div className="flex flex-row items-center gap-1">
                             <Star color="#F5C111" />
-                            <h1 className="text-sm lg:text-lg">
-                                {data?.vote_average}
+                            <h1 className="text-sm lg:text-xs">
+                                {data?.vote_average ?? 'Unavailable'}
                             </h1>
                         </div>
                         <div className="flex flex-row items-center gap-1">
                             <Tag color="#F5C111" />
-                            <h1 className="text-sm lg:text-lg">
-                                {formattedGenres}
+                            <h1 className="text-sm lg:text-xs">
+                                {formattedGenres ?? 'Unavailable'}
                             </h1>
                         </div>
                     </div>
-                    <p className="text-sm text-gray-300 lg:text-lg">
+                    <p className="text-gray-300 text-lg">
                         {data?.overview}
                     </p>
                 </div>
