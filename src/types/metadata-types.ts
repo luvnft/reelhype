@@ -6,8 +6,8 @@ interface Backdrop {
     vote_average: number;
     vote_count: number;
     width: number;
-  }
-  
-  export interface BackdropProps {
+}
+
+export interface BackdropProps {
     backdrops: Backdrop[];
-  }
+}

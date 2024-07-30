@@ -3,9 +3,6 @@ import { FilmInfo } from '@/server/tmdb';
 import { Disqus } from '../../_components/disqus';
 import { TrailerInfo } from '../../_components/trailer-info';
 
-
-
-
 export default async function Page({
     params: { media_type, id },
 }: {

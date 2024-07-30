@@ -19,8 +19,11 @@ import '@vidstack/react/player/styles/default/theme.css';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { FilmInfo } from '@/server/tmdb';
-import type { VideoPlayerProps } from '@/types/tmdb-types';
+import type { Genre, VideoPlayerProps } from '@/types/tmdb-types';
 import { useQuery } from '@tanstack/react-query';
+
+import { Calendar, Star, Tag } from '@phosphor-icons/react';
+import { formatDate } from '../_config/date-formatter';
 
 export function VideoPlayer({
     sources,
@@ -52,6 +55,12 @@ export function VideoPlayer({
         },
     });
 
+    function formatGenres(genres: Genre[]) {
+        return genres.map((genre) => genre.name).join(', ');
+    }
+
+    const formattedDate = formatDate(data?.release_date ?? '');
+    const formattedGenres = formatGenres(data?.genres ?? []);
     return (
         <div className="flex h-fit w-full flex-col gap-6 ">
             <div className="mb-0 h-fit w-full shadow-white-lg lg:mb-10 ">
@@ -79,6 +88,27 @@ export function VideoPlayer({
                     <h1 className="font-secondary text-2xl lg:text-3xl ">
                         {data?.name ?? data?.original_name ?? data?.title}
                     </h1>
+                    <div className="flex flex-row items-center gap-3 ">
+                        <div className="flex flex-row items-center gap-1">
+                            <Calendar color="#F5C111" />
+                            <h1 className="text-sm lg:text-lg">
+                                {formattedDate}
+                            </h1>
+                        </div>
+
+                        <div className="flex flex-row items-center gap-1">
+                            <Star color="#F5C111" />
+                            <h1 className="text-sm lg:text-lg">
+                                {data?.vote_average}
+                            </h1>
+                        </div>
+                        <div className="flex flex-row items-center gap-1">
+                            <Tag color="#F5C111" />
+                            <h1 className="text-sm lg:text-lg">
+                                {formattedGenres}
+                            </h1>
+                        </div>
+                    </div>
                     <p className="text-sm text-gray-300 lg:text-lg">
                         {data?.overview}
                     </p>

@@ -8,29 +8,28 @@ At Convofy, we wanted to create a platform that would bring together the best of
 
 ## Tech Stack
 
-- Next.js
-- Tailwind CSS
-- React & TypeScript
-- Authentiation (Clerk)
-- Analytics (PostHog)
-- Error Handling (Sentry)
-- Deployment (Vercel)
-- TMDB API
-- Image Management & Optimization (Cloudinary)
-- UI components (Embla-Carousel, Shadcn/UI )
-- Comments (Disqus)
-- Database (Drizzle & NeonDB)
-- video player (Vidstack)
-- client-side data fetching (React Query)
+-   Next.js
+-   Tailwind CSS
+-   React & TypeScript
+-   Authentiation (Clerk)
+-   Analytics (PostHog)
+-   Error Handling (Sentry)
+-   Deployment (Vercel)
+-   TMDB API
+-   Image Management & Optimization (Cloudinary)
+-   UI components (Embla-Carousel, Shadcn/UI )
+-   Comments (Disqus)
+-   Database (Drizzle & NeonDB)
+-   video player (Vidstack)
+-   client-side data fetching (React Query)
 
 ## Features
 
-- Watch trailers seamlessly.
-- Semantic Search (Coming Soon)
-- Join live audio conversations and chat in real-time. (Coming Soon)
-- Get AI-powered insights and summaries. (Coming Soon)
-- Engage with a community of movie and TV show enthusiasts. (Coming Soon)
-
+-   Watch trailers seamlessly.
+-   Semantic Search (Coming Soon)
+-   Join live audio conversations and chat in real-time. (Coming Soon)
+-   Get AI-powered insights and summaries. (Coming Soon)
+-   Engage with a community of movie and TV show enthusiasts. (Coming Soon)
 
 ## Contributing
 

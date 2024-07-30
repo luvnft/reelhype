@@ -1,10 +1,10 @@
 // app/providers.js
 'use client';
+import type { LayoutProps } from '@/types/layout-types';
 import { useAuth, useUser } from '@clerk/nextjs';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
 import { useEffect } from 'react';
-import type {LayoutProps} from '@/types/layout-types'
 
 if (typeof window !== 'undefined') {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {

@@ -1,7 +1,7 @@
 'use client';
 
+import { siteConfig } from '@/config/site';
 import { DiscussionEmbed } from 'disqus-react';
-import {siteConfig} from '@/config/site'
 
 const Disqus = ({
     id,
@@ -12,9 +12,8 @@ const Disqus = ({
     title: string;
     media_type: string;
 }) => {
-
     const disqusShortname = 'cinematic-one';
-    
+
     const disqusConfig = {
         url: `${siteConfig.url}/info/${media_type}/${id}`,
         identifier: id,

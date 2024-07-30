@@ -10,70 +10,67 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const runtime = 'edge';
-export const revalidate = 3600 // revalidate at most every hour
+export const revalidate = 3600; // revalidate at most every hour
 
-import { Metadata, Viewport } from "next"
-import { siteConfig } from "@/config/site"
+import { siteConfig } from '@/config/site';
+import type { Metadata } from 'next';
 
-import type {LayoutProps} from '@/types/layout-types'
+import type { LayoutProps } from '@/types/layout-types';
 
 export const metadata: Metadata = {
     title: {
-      default: siteConfig.name,
-      template: `%s - ${siteConfig.name}`,
+        default: siteConfig.name,
+        template: `%s - ${siteConfig.name}`,
     },
     metadataBase: new URL(siteConfig.url),
     description: siteConfig.description,
     keywords: [
-      "Movies",
-      "Tv Shows",
-      "Trailers",
-      "Collaboration",
-      "Movie Trailers",
-      "Tv Show Trailers",
+        'Movies',
+        'Tv Shows',
+        'Trailers',
+        'Collaboration',
+        'Movie Trailers',
+        'Tv Show Trailers',
     ],
     authors: [
-      {
-        name: "evansso",
-        url: "https://reelhype.space",
-      },
-    ],
-    creator: "shadcn",
-    openGraph: {
-      type: "website",
-      locale: "en_US",
-      url: siteConfig.url,
-      title: siteConfig.name,
-      description: siteConfig.description,
-      siteName: siteConfig.name,
-      images: [
         {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
-          alt: siteConfig.name,
+            name: 'evansso',
+            url: 'https://reelhype.space',
         },
-      ],
+    ],
+    creator: 'evansso',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: siteConfig.url,
+        title: siteConfig.name,
+        description: siteConfig.description,
+        siteName: siteConfig.name,
+        images: [
+            {
+                url: siteConfig.ogImage,
+                width: 1200,
+                height: 630,
+                alt: siteConfig.name,
+            },
+        ],
     },
     twitter: {
-      card: "summary_large_image",
-      title: siteConfig.name,
-      description: siteConfig.description,
-      images: [siteConfig.ogImage],
-      creator: "@evansso_",
+        card: 'summary_large_image',
+        title: siteConfig.name,
+        description: siteConfig.description,
+        images: [siteConfig.ogImage],
+        creator: '@evansso_',
     },
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon-16x16.png",
-      apple: "/apple-icon.png",
+        icon: '/favicon.ico',
+        shortcut: '/favicon-16x16.png',
+        apple: '/apple-icon.png',
     },
     manifest: `${siteConfig.url}/sitemap.xml`,
-  }
+};
 
-
-export default function RootLayout({
-    children,
-}: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
     return (
         <ClerkProvider>
             <CSPostHogProvider>
