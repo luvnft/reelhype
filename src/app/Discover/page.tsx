@@ -1,10 +1,10 @@
 import { TrendingCarousel } from '@/app/Discover/_components/trending-carousel';
 import ImageComponent from '@/components/image-component';
 import { Icons } from '@/components/ui/icons';
+import { siteConfig } from '@/config/site';
 import { TrendingFilms } from '@/server/tmdb';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
     title: 'Discover',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         'Collaboration',
         'Movie Trailers',
         'Tv Show Trailers',
-        "Discover"
+        'Discover',
     ],
     authors: [
         {

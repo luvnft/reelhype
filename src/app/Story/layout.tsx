@@ -1,9 +1,10 @@
-import { siteConfig } from '@/config/site';
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-    title: 'Search',
-    description: 'Search for movies and tv trailers',
+    title: 'Story',
+    description: 'Telling Convofy storiy of why',
     keywords: [
         'Movies',
         'Tv Shows',
@@ -11,12 +12,12 @@ export const metadata: Metadata = {
         'Collaboration',
         'Movie Trailers',
         'Tv Show Trailers',
-        'Search',
+        'Story',
     ],
     authors: [
         {
             name: 'Convofy',
-            url: 'https://reelhype.space/Search',
+            url: 'https://reelhype.space/Story',
         },
     ],
     creator: 'Convofy',
@@ -50,10 +51,10 @@ export const metadata: Metadata = {
     manifest: `${siteConfig.url}/sitemap.xml`,
 };
 
-export default function SearchLayout({
+export default function StoryLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return <div>{children}</div>;
+    return <MaxWidthWrapper>{children}</MaxWidthWrapper>;
 }

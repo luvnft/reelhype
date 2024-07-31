@@ -20,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'daily',
             priority: 1,
         },
+        {
+            url: 'https://reelhype.space/Story',
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 1,
+        },
     ];
 }
