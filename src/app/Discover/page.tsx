@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         icon: '/favicon.ico',
         apple: '/apple-icon.png',
     },
-    manifest: `${siteConfig.url}/sitemap.xml`,
+    manifest: `${siteConfig.url}/Discover/sitemap.xml`,
 };
 
 export default async function Trending() {

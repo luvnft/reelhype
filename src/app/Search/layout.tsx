@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         icon: '/favicon.ico',
         apple: '/apple-icon.png',
     },
-    manifest: `${siteConfig.url}/sitemap.xml`,
+    manifest: `${siteConfig.url}/Search/sitemap.xml`,
 };
 
 export default function SearchLayout({
