@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site';
 export const metadata: Metadata = {
     title: 'Story',
     description: 'Telling Convofy storiy of why',
+
     keywords: [
         'Movies',
         'Tv Shows',
