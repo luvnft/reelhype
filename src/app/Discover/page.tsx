@@ -5,6 +5,8 @@ import { siteConfig } from '@/config/site';
 import { TrendingFilms } from '@/server/tmdb';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { kv } from "@vercel/kv";
+import { J } from 'node_modules/@upstash/redis/zmscore-80635339';
 
 export const metadata: Metadata = {
     title: 'Discover',
@@ -57,13 +59,19 @@ export const metadata: Metadata = {
 };
 
 export default async function Trending() {
+
+    
+
     const data = await TrendingFilms();
+
+    
 
     return (
         <div className="mx-auto mt-20 flex w-full max-w-[1400px] flex-col gap-6 px-2 lg:mt-20 lg:gap-10 ">
             <TrendingCarousel />
+            
             <div className="grid grid-cols-2 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
-                {data.results.map((trending) => (
+                {data?.results.map((trending) => (
                     <Link
                         href={`/info/${trending.media_type}/${trending.id}`}
                         key={trending.id}

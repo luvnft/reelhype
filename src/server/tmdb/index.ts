@@ -2,10 +2,12 @@ import type { Movie, MovieData } from '@/types/tmdb-types';
 import { kv } from "@vercel/kv";
 
 export async function TrendingFilms() {
-    const responseData = await kv.get('trending');
-    if (responseData) {
-        return responseData as MovieData
-    }
+
+
+    
+    const cachedResults = await kv.get('trending') 
+ 
+    
     const res = await fetch(
         'https://api.themoviedb.org/3/trending/all/day?language=en-US',
         {
@@ -19,16 +21,18 @@ export async function TrendingFilms() {
 
     const data = (await res.json()) as MovieData;
 
-    await kv.set('trending', data);
-
-    return data;
+   if (cachedResults) {
+        return cachedResults as MovieData
+    } else if(!cachedResults) {
+        await kv.set('trending', JSON.stringify(res.json()));
+    }
+    
+    
 }
 
 export const fetchSearchResults = async (query: string) => {
-    const responseData = await kv.get('search');
-    if (responseData) {
-        return responseData as MovieData
-    }
+    const cachedResults = await kv.get('search');
+  
     const res = await fetch(
         `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`,
         {
@@ -44,7 +48,13 @@ export const fetchSearchResults = async (query: string) => {
 
     await kv.set('search', data);
 
-    return data;
+    if (cachedResults) {
+        return cachedResults
+    } else if(!cachedResults) {
+        await kv.set('trending', JSON.stringify(res.json()));
+    }
+    
+    
 };
 
 export async function FilmInfo({

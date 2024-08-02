@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: '/info/',
+                disallow: ['/info/', '/legal/Terms', '/legal/Privacy'],
             },
         ],
         sitemap: 'https://reelhype.space/sitemap.xml',
