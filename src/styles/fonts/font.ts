@@ -1,6 +1,5 @@
 import localFont from 'next/font/local';
 
-
 export const questrial = localFont({
     src: [
         {
@@ -8,14 +7,12 @@ export const questrial = localFont({
             weight: '400',
             style: 'normal',
         },
-       
     ],
     variable: '--font-questrial',
 });
 
 export const muli = localFont({
     src: [
-
         {
             path: './Muli.ttf',
             weight: '400',

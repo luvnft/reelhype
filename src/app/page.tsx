@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from "next/image"
@@ -17,7 +17,7 @@ export default async function HomePage() {
                 Watch the Latest Trailers, Join Live Premieres, and Connect with Fellow Fans.
                 </p>
 
-                <Button className='w-fit mx-auto flex flex-row gap-2'  color="warning" size="lg" radius="md">
+                <Button className='w-fit mx-auto flex flex-row gap-1' asChild  size="lg">
                     <Link href={'/Discover'}>Watch Trending Trailers</Link>
                     <ArrowUpRight />
                 </Button>

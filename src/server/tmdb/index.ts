@@ -1,7 +1,6 @@
 import type { Movie, MovieData } from '@/types/tmdb-types';
 
 export async function TrendingFilms() {
-    
     const res = await fetch(
         'https://api.themoviedb.org/3/trending/all/day?language=en-US',
         {
@@ -13,16 +12,12 @@ export async function TrendingFilms() {
         }
     );
 
-
     const data = (await res.json()) as MovieData;
 
     return data;
-    
 }
 
 export const fetchSearchResults = async (query: string) => {
-   
-
     const res = await fetch(
         `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`,
         {
@@ -35,7 +30,7 @@ export const fetchSearchResults = async (query: string) => {
         }
     );
 
-   const data = (await res.json()) as MovieData;
+    const data = (await res.json()) as MovieData;
 
     return data;
 };
@@ -47,9 +42,6 @@ export async function FilmInfo({
     media_type: string;
     id: string;
 }) {
-
-  
-
     const res = await fetch(
         `https://api.themoviedb.org/3/${media_type}/${id}?language=en-US`,
         {
@@ -63,5 +55,5 @@ export async function FilmInfo({
 
     const data = (await res.json()) as Movie;
 
-    return data
+    return data;
 }
