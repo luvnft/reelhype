@@ -1,88 +1,63 @@
-import { Inter, Urbanist } from 'next/font/google';
 import localFont from 'next/font/local';
 
-export const urbanist = Urbanist({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-urbanist',
-});
 
-export const inter = Inter({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-inter',
-});
-
-export const lato = localFont({
+export const questrial = localFont({
     src: [
         {
-            path: './Lato-Regular.ttf',
+            path: './Questrial-Regular.ttf',
             weight: '400',
             style: 'normal',
         },
-        {
-            path: './Lato-Italic.ttf',
-            weight: '400',
-            style: 'italic',
-        },
-        {
-            path: './Lato-Bold.ttf',
-            weight: '700',
-            style: 'normal',
-        },
-        {
-            path: './Lato-BoldItalic.ttf',
-            weight: '700',
-            style: 'italic',
-        },
+       
     ],
-    variable: '--font-lato',
+    variable: '--font-questrial',
 });
 
-export const poppins = localFont({
+export const muli = localFont({
     src: [
+
         {
-            path: './Poppins-Regular.ttf',
+            path: './Muli.ttf',
             weight: '400',
             style: 'normal',
         },
         {
-            path: './Poppins-Italic.ttf',
+            path: './Muli-Italic.ttf',
             weight: '400',
             style: 'italic',
         },
         {
-            path: './Poppins-Medium.ttf',
-            weight: '500',
+            path: './Muli-Light.ttf',
+            weight: '300',
             style: 'normal',
         },
         {
-            path: './Poppins-MediumItalic.ttf',
-            weight: '500',
+            path: './Muli-LightItalic.ttf',
+            weight: '300',
             style: 'italic',
         },
         {
-            path: './Poppins-SemiBold.ttf',
+            path: './Muli-SemiBold.ttf',
             weight: '600',
             style: 'normal',
         },
         {
-            path: './Poppins-SemiBoldItalic.ttf',
+            path: './Muli-Semi-BoldItalic.ttf',
             weight: '600',
             style: 'italic',
         },
         {
-            path: './Poppins-Bold.ttf',
+            path: './Muli-Bold.ttf',
             weight: '700',
             style: 'normal',
         },
         {
-            path: './Poppins-BoldItalic.ttf',
+            path: './Muli-BoldItalic.ttf',
             weight: '700',
             style: 'italic',
         },
     ],
-    variable: '--font-poppins',
+    variable: '--font-muli',
 });
 
 export const pacifico = localFont({

@@ -4,10 +4,11 @@ import { MainNav } from '@/components/main-nav';
 import { CSPostHogProvider } from '@/config/posthog-provider';
 import { QueryProvider } from '@/config/query-provider';
 import { cn } from '@/lib/utils';
-import { lato, pacifico, poppins } from '@/styles/fonts/font';
+import { questrial, pacifico, muli } from '@/styles/fonts/font';
 import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import {NextUIProvider} from "@nextui-org/react";
 
 export const revalidate = 3600; // revalidate at most every hour
 
@@ -74,11 +75,12 @@ export default function RootLayout({ children }: LayoutProps) {
             <CSPostHogProvider>
                 <html lang="en" suppressHydrationWarning>
                     <QueryProvider>
+                    <NextUIProvider>
                         <body
                             className={cn(
                                 'dark min-h-screen bg-black font-primary text-foreground antialiased',
-                                lato.variable,
-                                poppins.variable,
+                                muli.variable,
+                                questrial.variable,
                                 pacifico.variable
                             )}
                         >
@@ -92,6 +94,7 @@ export default function RootLayout({ children }: LayoutProps) {
 
                             {children}
                         </body>
+                        </NextUIProvider>
                     </QueryProvider>
                 </html>
             </CSPostHogProvider>
