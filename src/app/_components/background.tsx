@@ -7,7 +7,7 @@ import type { Movie } from '@/types/tmdb-types';
 export async function RandomItems() {
     const data = await TrendingFilms();
     const randomIndex = Math.floor(Math.random() * 10);
-    const randomItem = data.results[randomIndex];
+    const randomItem = data?.results[randomIndex];
 
     return randomItem;
 }

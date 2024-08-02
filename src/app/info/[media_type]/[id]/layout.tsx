@@ -2,6 +2,9 @@ import { FilmInfo } from '@/server/tmdb';
 import type { LayoutProps } from '@/types/layout-types';
 import type { BackdropProps } from '@/types/metadata-types';
 
+
+export const runtime = 'edge';
+
 export async function generateMetadata({
     params,
 }: {

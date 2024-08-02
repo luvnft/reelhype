@@ -6,6 +6,8 @@ import { TrendingFilms } from '@/server/tmdb';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+export const runtime = 'edge'
+
 export const metadata: Metadata = {
     title: 'Discover',
     description: 'Discover movies and tv trailers',

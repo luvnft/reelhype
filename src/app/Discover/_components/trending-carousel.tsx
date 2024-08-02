@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import Autoplay from 'embla-carousel-autoplay';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 
+
 import { Button } from '@/components/ui/button';
 import { TrendingFilms } from '@/server/tmdb';
 import Link from 'next/link';
@@ -18,16 +19,12 @@ export const TrendingCarousel = () => {
     ]);
     const { data } = useQuery({
         queryKey: ['TrendingCarousel'],
-        queryFn: async () => {
-            const data = await TrendingFilms();
-            return data;
-        },
+        queryFn: TrendingFilms
     });
-    console.log(data);
 
     return (
         <div className="overflow-hidden" ref={emblaRef}>
-            <h1>{JSON.stringify(data?.results)}</h1>
+         
             <div className="flex-start flex flex-row gap-1">
                 {data?.results?.map((trending) => (
                     <div
