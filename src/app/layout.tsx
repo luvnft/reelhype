@@ -9,7 +9,6 @@ import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-
 export const revalidate = 3600; // revalidate at most every hour
 
 import { siteConfig } from '@/config/site';

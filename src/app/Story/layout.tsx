@@ -1,6 +1,6 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Story',

@@ -18,16 +18,16 @@ export const TrendingCarousel = () => {
     ]);
     const { data } = useQuery({
         queryKey: ['TrendingCarousel'],
-        queryFn: async() => {
-        const data = await TrendingFilms()!;
-        return data;
+        queryFn: async () => {
+            const data = await TrendingFilms();
+            return data;
         },
     });
     console.log(data);
 
     return (
         <div className="overflow-hidden" ref={emblaRef}>
-        <h1>{JSON.stringify(data?.results)}</h1>
+            <h1>{JSON.stringify(data?.results)}</h1>
             <div className="flex-start flex flex-row gap-1">
                 {data?.results?.map((trending) => (
                     <div
