@@ -3,7 +3,6 @@ import ImageComponent from '@/components/image-component';
 import { Icons } from '@/components/ui/icons';
 import Loading from '@/components/ui/loading';
 import { fetchSearchResults } from '@/server/tmdb';
-import type { SearchResult } from '@/types/tmdb-types';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -11,7 +10,7 @@ import React, { useState } from 'react';
 export function Searchinput() {
     const [searchQuery, setSearchQuery] = useState<string>('');
 
-    const { data, isLoading } = useQuery<{ results: SearchResult[] }>({
+    const { data, isLoading } = useQuery({
         queryKey: ['search', searchQuery],
         queryFn: async () => await fetchSearchResults(searchQuery),
         enabled: searchQuery !== '', // Only fetch data when searchQuery is not empty
