@@ -21,7 +21,7 @@ export async function TrendingFilms() {
 
     const data = (await res.json()) as MovieData;
 
-    await redis.set(key, JSON.stringify(data), 'EX', 60 * 60 * 24);
+    await redis.set(key, JSON.stringify(data), { ex: 86400 });
     console.log('set');
 
     return data;
@@ -47,7 +47,7 @@ export const fetchSearchResults = async (query: string) => {
 
     const data = (await res.json()) as MovieData;
 
-    await redis.set(key, JSON.stringify(data), 'EX', 60 * 60 * 24);
+    await redis.set(key, JSON.stringify(data), { ex: 86400 });
 
     return data;
 };
@@ -77,7 +77,7 @@ export async function FilmInfo({
 
     const data = (await res.json()) as Movie;
 
-    await redis.set(key, JSON.stringify(data), 'EX', 60 * 60 * 24);
+    await redis.set(key, JSON.stringify(data), { ex: 86400 });
 
     return data;
 }
