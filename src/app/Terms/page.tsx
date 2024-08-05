@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Terms of Service',
+    description: 'Convofy terms of service',
+}
+
+
 const TermsOfService = () => (
     <div className="container prose mx-auto max-w-none px-4 py-8">
         <h1 className="mb-4 text-3xl font-bold">ReelHype Terms of Service</h1>

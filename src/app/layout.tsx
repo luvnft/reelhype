@@ -19,31 +19,16 @@ import type { LayoutProps } from '@/types/layout-types';
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s - ${siteConfig.name}`,
+        template: `%s | Convofy`,
     },
     metadataBase: new URL(siteConfig.url),
     description: siteConfig.description,
-    keywords: [
-        'Movies',
-        'Tv Shows',
-        'Trailers',
-        'Collaboration',
-        'Movie Trailers',
-        'Tv Show Trailers',
-    ],
-    authors: [
-        {
-            name: 'Convofy',
-            url: 'https://reelhype.space',
-        },
-    ],
-    creator: 'Convofy',
     openGraph: {
         type: 'website',
         locale: 'en_US',
         url: siteConfig.url,
-        title: siteConfig.name,
-        description: siteConfig.description,
+        title: "Convofy | Watch. Discuss. Enjoy.",
+        description: 'Experience the latest movie and TV trailers with ease',
         siteName: siteConfig.name,
         images: [
             {
@@ -55,17 +40,23 @@ export const metadata: Metadata = {
         ],
     },
     twitter: {
-        card: 'summary_large_image',
         title: siteConfig.name,
-        description: siteConfig.description,
+        description: 'Discover trailers. Connect with fans. Dive deeper.',
         images: [siteConfig.ogImage],
-        creator: '@Convofy',
     },
     icons: {
         icon: '/favicon.ico',
         apple: '/apple-icon.png',
     },
-    manifest: `${siteConfig.url}/sitemap.xml`,
+    manifest: `${siteConfig.url}/site.webmanifest`,
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
+    }
 };
 
 export default function RootLayout({ children }: LayoutProps) {

@@ -39,7 +39,7 @@ export async function generateMetadata({
     const { name, original_name, overview, title } = data;
 
     return {
-        title: `${name || original_name || title} Trailer`,
+        title: `${name || original_name || title} | Trailer`,
         description: overview,
         openGraph: {
             images: [
@@ -52,11 +52,9 @@ export async function generateMetadata({
             ],
         },
         twitter: {
-            card: 'summary_large_image',
             title: `${name ?? original_name ?? title} Trailer`,
             description: overview,
             images: `https://image.tmdb.org/t/p/original${backdropPath}`,
-            creator: '@evansso_',
         },
     };
 }

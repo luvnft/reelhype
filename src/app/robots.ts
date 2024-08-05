@@ -1,14 +1,13 @@
-import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/config/site';
 
-export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: [
-            {
-                userAgent: '*',
-                allow: '/',
-                disallow: ['/info/', '/legal/Terms', '/legal/Privacy'],
-            },
-        ],
-        sitemap: 'https://reelhype.space/sitemap.xml',
-    };
+export default function robots() {
+  return {
+    rules: [
+      {
+        userAgent: "*",
+      },
+    ],
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: `${siteConfig.url}`,
+  };
 }
