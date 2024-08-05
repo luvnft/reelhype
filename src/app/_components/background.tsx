@@ -1,28 +1,23 @@
 // ./src/app/_components/background.tsx
 
-import ImageComponent from '@/components/image-component';
-import { TrendingFilms } from '@/server/tmdb';
-import type { Movie } from '@/types/tmdb-types';
+'use client'
 
-export async function RandomItems() {
-    const data = await TrendingFilms();
-    const randomIndex = Math.floor(Math.random() * 10);
-    const randomItem = data?.results[randomIndex];
+import useEmblaCarousel from 'embla-carousel-react'
 
-    return randomItem;
-}
 
-export function Background({ randomItem }: { randomItem: Movie }) {
+
+
+export function Background() {
+    const [emblaRef] = useEmblaCarousel()
     return (
-        <div className="min-h-screen w-full bg-cover">
-            {randomItem && (
-                <ImageComponent
-                    src={`https://image.tmdb.org/t/p/original${randomItem.backdrop_path}`}
-                    alt={randomItem.title || randomItem.name}
-                    fill={true}
-                    className="object-cover"
-                />
-            )}
+        <div className=" w-full bg-cover">
+            <div className='w-full overflow-hidden'>
+                <div className='flex'>
+                    
+                </div>
+            </div>
+
+
         </div>
     );
 }

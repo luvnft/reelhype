@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         icon: '/favicon.ico',
         apple: '/apple-icon.png',
     },
-    manifest: `${siteConfig.url}/site.webmanifest`,
+    manifest: `${siteConfig.url}/manifest.webmanifest`,
     robots: {
         index: true,
         follow: true,
