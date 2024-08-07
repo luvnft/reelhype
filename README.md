@@ -1,10 +1,10 @@
-# Convofy
+# ReelHype
 
-Convofy is an open-source movie and TV trailer watching platform. Our mission is to make the trailer-watching experience more interactive and engaging. We believe in the power of conversation and aim to make Convofy the ultimate hub for trailer talk.
+ReelHype is an open-source movie and TV trailer watching platform. Our mission is to make the trailer-watching experience more interactive and engaging. We believe in the power of conversation and aim to make ReelHype the ultimate hub for trailer talk.
 
-## Why Convofy?
+## Why ReelHype?
 
-At Convofy, we wanted to create a platform that would bring together the best of both worlds: the excitement of watching trailers and the community of movie and TV show enthusiasts. We wanted to create a platform where users could watch trailers together, join live audio conversations, and connect with like-minded individuals. It wasn't just about watching trailers; it was about experiencing them together.
+At ReelHype, we wanted to create a platform that would bring together the best of both worlds: the excitement of watching trailers and the community of movie and TV show enthusiasts. We wanted to create a platform where users could watch trailers together, join live audio conversations, and connect with like-minded individuals. It wasn't just about watching trailers; it was about experiencing them together.
 
 ## Tech Stack
 
@@ -33,7 +33,7 @@ At Convofy, we wanted to create a platform that would bring together the best of
 
 ## Contributing
 
-We welcome contributions to Convofy! If you'd like to contribute, please follow these steps:
+We welcome contributions to ReelHype! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.

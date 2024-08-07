@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Convofy',
-        short_name: 'Convofy',
+        name: 'ReelHype',
+        short_name: 'ReelHype',
         description: 'Ultimate Destination for Movie & TV Trailers',
         start_url: '/',
         display: 'standalone',

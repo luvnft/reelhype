@@ -19,7 +19,7 @@ import type { LayoutProps } from '@/types/layout-types';
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s | Convofy`,
+        template: `%s | ReelHype`,
     },
     metadataBase: new URL(siteConfig.url),
     description: siteConfig.description,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: siteConfig.url,
-        title: "Convofy | Watch. Discuss. Enjoy.",
+        title: 'ReelHype | Watch. Discuss. Enjoy.',
         description: 'Experience the latest movie and TV trailers with ease',
         siteName: siteConfig.name,
         images: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
             index: true,
             follow: true,
         },
-    }
+    },
 };
 
 export default function RootLayout({ children }: LayoutProps) {

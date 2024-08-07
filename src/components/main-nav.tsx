@@ -30,7 +30,7 @@ export function MainNav() {
                             <MobileNav />
                             <Link href={'/'}>
                                 <h1 className="font-accent text-lg text-[#F5C111]">
-                                    Convofy
+                                    ReelHype
                                 </h1>
                             </Link>
                         </div>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Story',
-    description: 'Why I`m building Convofy',
+    description: 'Why I`m building ReelHype',
 };
 
 export default function StoryLayout({

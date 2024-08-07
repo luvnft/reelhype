@@ -8,5 +8,5 @@ export default {
     dbCredentials: {
         url: env.DATABASE_URL,
     },
-    tablesFilter: ['Convofy_*'],
+    tablesFilter: ['ReelHype_*'],
 } satisfies Config;
