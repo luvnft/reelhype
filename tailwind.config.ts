@@ -28,11 +28,11 @@ const config = {
                     'var(--font-questrial)',
                     ...defaultTheme.fontFamily.sans,
                 ],
-                primary: ['var(--font-muli)', ...defaultTheme.fontFamily.mono],
-                accent: [
-                    'var(--font-pacifico)',
+                primary: [
+                    'var(--font-geist-sans)',
                     ...defaultTheme.fontFamily.sans,
                 ],
+                accent: ['var(--font-bebas)', ...defaultTheme.fontFamily.sans],
             },
 
             colors: {

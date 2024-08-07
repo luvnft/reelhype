@@ -22,15 +22,15 @@ export function MainNav() {
     const pathname = usePathname();
 
     return (
-        <div className="fixed left-0 right-0  top-0 z-50 w-full bg-[#0A0B0B] backdrop-blur-xl">
+        <div className="fixed left-0 right-0  top-0 z-50 w-full bg-gradient-to-b from-black to-transparent">
             <nav className="mx-auto flex w-full max-w-[1200px]   px-3 py-4 lg:px-0 ">
                 <section className="flex w-full flex-row items-center justify-between ">
                     <div className="flex flex-row items-center gap-[52px]">
                         <div className="flex flex-row items-center gap-4">
                             <MobileNav />
                             <Link href={'/'}>
-                                <h1 className="font-accent text-lg text-[#F5C111]">
-                                    ReelHype
+                                <h1 className="font-accent text-lg text-white">
+                                    Reel<span className="text-[#F80]">Hype</span>
                                 </h1>
                             </Link>
                         </div>
@@ -62,13 +62,11 @@ export function MainNav() {
 
                         <div>
                             <SignedOut>
-                                <Button
-                                    asChild
-                                    size={'sm'}
-                                    className="rounded-full"
+                                <h1 className='text-[#f80] '
+
                                 >
                                     <SignInButton />
-                                </Button>
+                                </h1>
                             </SignedOut>
                             <SignedIn>
                                 <UserButton />
