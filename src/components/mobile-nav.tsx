@@ -24,14 +24,14 @@ export default function MobileNav() {
 
                     <div className="grid gap-4 py-4">
                         <Link
-                            className={`text-lg ${pathname === '/Trending' ? 'text-white' : 'text-gray-300 '}`}
+                            className={`text-lg ${pathname === '/Trending' ? 'text-[#F80]' : 'text-gray-300 '}`}
                             href={'/Discover'}
                         >
                             Discover
                         </Link>
 
                         <Link
-                            className={`text-lg ${pathname === '/Search' ? 'text-white ' : 'text-gray-300'}`}
+                            className={`text-lg ${pathname === '/Search' ? 'text-[#F80] ' : 'text-gray-300'}`}
                             href={'/Search'}
                         >
                             Search

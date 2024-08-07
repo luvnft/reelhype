@@ -90,30 +90,30 @@ export function VideoPlayer({
                     </h1>
                     <div className="flex flex-row items-center gap-3 ">
                         <div className="flex flex-row items-center gap-1">
-                            <Calendar color="#F5C111" />
+                            <Calendar color="#f80" />
                             <h1 className="text-sm lg:text-xs">
                                 {formattedDate ?? 'Unavailable'}
                             </h1>
                         </div>
 
                         <div className="flex flex-row items-center gap-1">
-                            <Star color="#F5C111" />
+                            <Star color="#f80" />
                             <h1 className="text-sm lg:text-xs">
                                 {data?.vote_average ?? 'Unavailable'}
                             </h1>
                         </div>
                         <div className="flex flex-row items-center gap-1">
-                            <Tag color="#F5C111" />
+                            <Tag color="#f80" />
                             <h1 className="text-sm lg:text-xs">
                                 {formattedGenres ?? 'Unavailable'}
                             </h1>
                         </div>
                     </div>
-                    <p className="text-lg text-gray-300">{data?.overview}</p>
+                    <p className="lg:text-lg text-sm text-gray-300">{data?.overview}</p>
                 </div>
                 <div>
                     <div className="mb-3 flex flex-row justify-between">
-                        <h1 className="text-xl font-medium">
+                        <h1 className="text-xl font-medium font-secondary">
                             Related Trailers
                         </h1>
                     </div>
