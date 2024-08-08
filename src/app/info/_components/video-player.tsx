@@ -109,11 +109,13 @@ export function VideoPlayer({
                             </h1>
                         </div>
                     </div>
-                    <p className="lg:text-lg text-sm text-gray-300">{data?.overview}</p>
+                    <p className="text-sm text-gray-300 lg:text-lg">
+                        {data?.overview}
+                    </p>
                 </div>
                 <div>
                     <div className="mb-3 flex flex-row justify-between">
-                        <h1 className="text-xl font-medium font-secondary">
+                        <h1 className="font-secondary text-xl font-medium">
                             Related Trailers
                         </h1>
                     </div>

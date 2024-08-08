@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 
+import Footer from '@/components/footer';
 import { MainNav } from '@/components/main-nav';
 import { CSPostHogProvider } from '@/config/posthog-provider';
 import { QueryProvider } from '@/config/query-provider';
@@ -8,7 +9,7 @@ import { bebas, questrial } from '@/styles/fonts/font';
 import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GeistSans } from 'geist/font/sans'
+import { GeistSans } from 'geist/font/sans';
 
 export const revalidate = 3600; // revalidate at most every hour
 
@@ -66,9 +67,14 @@ export default function RootLayout({ children }: LayoutProps) {
             <CSPostHogProvider>
                 <html lang="en" suppressHydrationWarning>
                     <QueryProvider>
+                        <div>
+                            <SpeedInsights />
+                            <Analytics />
+                            <GoogleOneTap />
+                        </div>
                         <body
                             className={cn(
-                                'dark min-h-screen bg-black font-primary text-foreground antialiased',
+                                'dark flex min-h-screen flex-col gap-20 bg-black font-primary text-foreground antialiased',
                                 GeistSans.variable,
                                 questrial.variable,
                                 bebas.variable
@@ -76,13 +82,8 @@ export default function RootLayout({ children }: LayoutProps) {
                         >
                             <MainNav />
 
-                            <div>
-                                <SpeedInsights />
-                                <Analytics />
-                                <GoogleOneTap />
-                            </div>
-
                             {children}
+                            <Footer />
                         </body>
                     </QueryProvider>
                 </html>
