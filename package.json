@@ -33,6 +33,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cssnano": "^7.0.4",
     "disqus-react": "^1.1.5",
     "drizzle-orm": "^0.30.10",
     "embla-carousel-auto-height": "^8.1.7",
