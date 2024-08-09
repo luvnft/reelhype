@@ -12,7 +12,7 @@ const Disqus = ({
     title: string;
     media_type: string;
 }) => {
-    const disqusShortname = 'cinematic-one';
+    const disqusShortname = 'reelhype';
 
     const disqusConfig = {
         url: `${siteConfig.url}/info/${media_type}/${id}`,

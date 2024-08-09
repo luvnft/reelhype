@@ -35,6 +35,7 @@ export default function ImageComponent({
             height={height}
             className={cn(className)}
             fill={fill}
+            priority={true}
             {...props}
         />
     );

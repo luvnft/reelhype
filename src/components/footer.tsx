@@ -1,6 +1,4 @@
-'use client';
 
-import { ArrowUpRight } from '@phosphor-icons/react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -14,10 +12,6 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <Link target="_blank" href="https://reelhype.openstatus.dev">
-                    <img src="https://reelhype.openstatus.dev/badge?theme=dark&size=sm" />
-                </Link>
-
                 <div className="flex flex-col gap-1 ">
                     <div className="flex flex-row gap-3 lg:gap-10">
                         <Link
@@ -25,7 +19,7 @@ export default function Footer() {
                             className="flex flex-row items-center gap-2 text-gray-400"
                             target="_blank"
                         >
-                            <ArrowUpRight />
+
                             <p>Github</p>
                         </Link>
                         <Link
@@ -33,7 +27,7 @@ export default function Footer() {
                             className="flex flex-row items-center gap-2 text-gray-400"
                             target="_blank"
                         >
-                            <ArrowUpRight />
+                    
                             <p>Twitter</p>
                         </Link>
                     </div>

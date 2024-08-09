@@ -15,14 +15,7 @@ export default function DiscoverPage() {
     return (
         <div className="mx-auto mt-20 flex min-h-screen w-full max-w-[1400px] flex-col gap-6 px-2 lg:mt-20 lg:gap-10 ">
             <Carousel />
-            <Suspense
-                fallback={Array.from({ length: 6 }).map((
-                    _,
-                    idx,
-                ) => (
-                    <Skeleton key={idx} className="w-full h-full" />
-                ))}
-            >
+            <Suspense fallback={<Skeleton className="h-full w-full" />}>
                 <Trending />
             </Suspense>
         </div>
@@ -33,7 +26,7 @@ async function Carousel() {
     const data = await TrendingFilms();
 
     return (
-        <Suspense fallback={<Skeleton className="w-full h-full" />}>
+        <Suspense fallback={<Skeleton className="h-full w-full" />}>
             <TrendingCarousel data={data} />
         </Suspense>
     );
@@ -43,7 +36,6 @@ async function Trending() {
     const data = await TrendingFilms();
     return (
         <div className="grid grid-cols-2 gap-x-2 gap-y-3 lg:grid-cols-5 lg:gap-5">
-
             {data?.results.map((trending) => (
                 <Link
                     href={`/info/${trending.media_type}/${trending.id}`}

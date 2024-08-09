@@ -74,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps) {
                         </div>
                         <body
                             className={cn(
-                                'dark flex min-h-screen flex-col gap-20 bg-black font-primary text-foreground antialiased',
+                                'dark flex min-h-screen flex-col  bg-black font-primary text-foreground antialiased',
                                 GeistSans.variable,
                                 questrial.variable,
                                 bebas.variable
