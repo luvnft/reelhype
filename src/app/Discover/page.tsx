@@ -40,6 +40,7 @@ async function Trending() {
                 <Link
                     href={`/info/${trending.media_type}/${trending.id}`}
                     key={trending.id}
+                    prefetch={true}
                     className="flex cursor-pointer flex-col items-start gap-1 px-[13px]"
                 >
                     <ImageComponent

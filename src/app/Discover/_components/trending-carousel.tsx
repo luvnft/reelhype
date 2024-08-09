@@ -50,6 +50,7 @@ export const TrendingCarousel = ({ data }: { data?: MovieData }) => {
                                 <Button className="w-fit" asChild>
                                     <Link
                                         href={`/info/${trending.media_type}/${trending.id}`}
+                                        prefetch={true}
                                     >
                                         Watch Trailer
                                     </Link>

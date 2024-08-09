@@ -11,7 +11,8 @@ export default function Page({
     params: { media_type: string; id: string };
 }) {
     return (
-        <div className="relative min-h-screen">
+        <div className='min-h-screen w-full'>
+            <div className="relative ">
             <Suspense
                 fallback={
                     <div className="h-[400px] w-screen object-cover lg:h-[700px] " />
@@ -51,6 +52,8 @@ export default function Page({
                 </div>
             </div>
         </div>
+        </div>
+        
     );
 }
 

@@ -26,6 +26,7 @@ export default function MobileNav() {
                         <Link
                             className={`text-lg ${pathname === '/Trending' ? 'text-[#F80]' : 'text-gray-300 '}`}
                             href={'/Discover'}
+                            prefetch={true}
                         >
                             Discover
                         </Link>
@@ -33,6 +34,7 @@ export default function MobileNav() {
                         <Link
                             className={`text-lg ${pathname === '/Search' ? 'text-[#F80] ' : 'text-gray-300'}`}
                             href={'/Search'}
+                            prefetch={true}
                         >
                             Search
                         </Link>

@@ -21,6 +21,7 @@ export default function HomePage() {
                         <Link
                             className="flex flex-row items-center space-x-2"
                             href={'/Discover'}
+                            prefetch={true}
                         >
                             <h1>Discover Now</h1>
                         </Link>

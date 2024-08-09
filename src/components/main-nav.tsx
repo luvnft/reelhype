@@ -45,6 +45,7 @@ export function MainNav() {
                             return (
                                 <Link
                                     key={index}
+                                    prefetch={true}
                                     className={`rounded-full px-3 py-0.5 text-lg transition-all duration-300 hover:bg-[#2b2b2b] ${pathname === href ? 'text-white underline decoration-[#F80] decoration-wavy decoration-2 underline-offset-4' : 'text-gray-300 transition-all duration-300 hover:text-white'}`}
                                     href={href}
                                 >
