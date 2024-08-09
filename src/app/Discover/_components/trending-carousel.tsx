@@ -3,23 +3,17 @@
 import useEmblaCarousel from 'embla-carousel-react';
 
 import ImageComponent from '@/components/image-component';
-import { useQuery } from '@tanstack/react-query';
+import { Button } from '@/components/ui/button';
+import type { MovieData } from '@/types/tmdb-types';
 import Autoplay from 'embla-carousel-autoplay';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
-
-import { Button } from '@/components/ui/button';
-import { TrendingFilms } from '@/server/tmdb';
 import Link from 'next/link';
 
-export const TrendingCarousel = () => {
+export const TrendingCarousel = ({ data }: { data?: MovieData }) => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [
         Autoplay(),
         WheelGesturesPlugin(),
     ]);
-    const { data } = useQuery({
-        queryKey: ['TrendingCarousel'],
-        queryFn: TrendingFilms,
-    });
 
     return (
         <div className="overflow-hidden" ref={emblaRef}>

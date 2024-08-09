@@ -4,25 +4,19 @@
 
 import ImageComponent from '@/components/image-component';
 import { cn } from '@/lib/utils';
-import { TrendingFilms, UpcomingMovies } from '@/server/tmdb';
-import { useQuery } from '@tanstack/react-query';
+import type { MovieData } from '@/types/tmdb-types';
+
 import Marquee from 'react-fast-marquee';
 
-export const BackgroundCarousel = ({ className }: { className?: string }) => {
-    const { data: trendingData, isLoading: trendingLoading } = useQuery({
-        queryKey: ['background'],
-        queryFn: TrendingFilms,
-    });
-
-    const { data: upcomingData, isLoading: upcomingLoading } = useQuery({
-        queryKey: ['upcoming'],
-        queryFn: UpcomingMovies,
-    });
-
-    if (trendingLoading || upcomingLoading) {
-        return <div>Loading...</div>; // loading state, or return a spinner, etc.
-    }
-
+export const BackgroundCarousel = ({
+    className,
+    trendingData,
+    upcomingData,
+}: {
+    className?: string;
+    trendingData?: MovieData;
+    upcomingData?: MovieData;
+}) => {
     return (
         <div className={cn('flex flex-col gap-0 lg:gap-3', className)}>
             <Marquee
@@ -66,7 +60,7 @@ export const BackgroundCarousel = ({ className }: { className?: string }) => {
             >
                 <div className="hidden md:block lg:block">
                     <div className=" flex  w-full  flex-row gap-3 space-x-3 bg-gradient-to-r from-black via-transparent to-black ">
-                        {upcomingData?.results?.map((trending, idx) => (
+                        {upcomingData?.results?.map((trending) => (
                             <div
                                 key={trending.id}
                                 className="flex-0 min-width-0 flex shrink-0 grow-0"

@@ -15,7 +15,7 @@ app.get('/TrendingFilms', async (c) => {
 app.get('/health', async (c) => {
     return c.json({
         message: 'Hello openstatus!',
-      })
+    });
 });
 
 export const GET = handle(app);

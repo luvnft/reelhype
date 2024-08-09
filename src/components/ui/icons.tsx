@@ -1,6 +1,10 @@
 'use client';
 
+import { ArrowRight } from 'lucide-react';
+
 export const Icons = {
+    right: ArrowRight,
+
     star: () => (
         <svg
             width="12.8"

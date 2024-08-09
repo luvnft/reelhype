@@ -35,7 +35,33 @@ export async function UpcomingMovies() {
         return cached as unknown as MovieData;
     }
     const res = await fetch(
-        'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+        'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+            },
+        }
+    );
+
+    const data = (await res.json()) as MovieData;
+
+    await redis.set(key, JSON.stringify(data), { ex: 86400 });
+    console.log('set');
+
+    return data;
+}
+
+export async function UpcomingShows() {
+    const key = 'upcoming-shows';
+    const cached = await redis.get(key);
+    if (cached) {
+        console.log('cached');
+        return cached as unknown as MovieData;
+    }
+    const res = await fetch(
+        'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1',
         {
             method: 'GET',
             headers: {
