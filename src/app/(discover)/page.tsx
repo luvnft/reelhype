@@ -1,9 +1,10 @@
-import { BackgroundCarousel } from '@/app/_components/background';
+import { BackgroundCarousel } from '@/app/(discover)/_components/background';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { UpcomingMovies, UpcomingShows } from '@/server/tmdb';
 import Link from 'next/link';
 import { Suspense } from 'react';
+
 
 export default function HomePage() {
     return (

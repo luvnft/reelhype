@@ -1,10 +1,11 @@
-import { TrendingCarousel } from '@/app/Discover/_components/trending-carousel';
+import { TrendingCarousel } from '@/app/(discover)/Discover/_components/trending-carousel';
 import ImageComponent from '@/components/image-component';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TrendingFilms } from '@/server/tmdb';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Suspense } from 'react';
+
 
 export const metadata: Metadata = {
     title: 'Discover',

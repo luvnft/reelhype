@@ -16,6 +16,9 @@ const coreConfig = {
     },
     // This is required to support PostHog trailing slash API requests
     skipTrailingSlashRedirect: true,
+    experimental: {
+        ppr: 'incremental',
+      },
 };
 
 import { withSentryConfig } from '@sentry/nextjs';

@@ -17,6 +17,7 @@ import { siteConfig } from '@/config/site';
 import type { Metadata } from 'next';
 
 import type { LayoutProps } from '@/types/layout-types';
+export const experimental_ppr = true
 
 export const metadata: Metadata = {
     title: {
